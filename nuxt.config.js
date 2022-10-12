@@ -56,16 +56,16 @@ export default {
     '@nuxtjs/axios'
   ],
   axios: {
-    baseURL: "http://127.0.0.1:4000"
+    baseURL: "http://ctia.dplcz.cn:9801"
   },
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL
+      browserBaseURL: "http://ctia.dplcz.cn:9801"
     }
   },
   privateRuntimeConfig: {
     axios: {
-      baseURL: "http://127.0.0.1:4000"
+      baseURL: "http://ctia.dplcz.cn:9801"
     }
   },
   /*

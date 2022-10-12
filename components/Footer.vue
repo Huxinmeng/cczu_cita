@@ -195,7 +195,7 @@ export default {
       window.scrollTo(0, 0);
     },
     // async asyncData() {
-    //   const ip = await this.$axios.$get("/base");
+    //   const ip = await this.$axios.$get("/index/list-teacher");
     //   console.log(ip);
     // },
   },
