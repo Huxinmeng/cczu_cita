@@ -1,0 +1,131 @@
+
+
+/*===========================
+    17.MISSION css 
+===========================*/
+
+
+.experience-area{
+	background: #192437;
+	position: relative;
+	padding-top: 120px;
+	z-index: 10;
+	overflow: hidden;
+	&::before{
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 0;
+		height: 310px;
+		width: 100%;
+		background-image: url(../images/news-bg-3.png);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: -2;
+	}
+	& .experience-content{
+		padding-top: 53px;
+		& .title{
+			font-weight: 400;
+			font-size: 50px;
+			line-height: 60px;
+			color: $white;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			@media #{$xs} {
+				font-size: 34px;
+				line-height: 44px;
+			}
+		}
+	}
+	& .experience-item{
+		& span{
+			color: $white;
+			font-weight: 400;
+			text-transform: uppercase;
+			padding-top: 18px;
+			margin-left: -20px;
+			@include transition(0.3s);
+			& i{
+				color: $theme-color;
+				padding-right: 10px;
+				opacity: 0;
+				@include transition(0.3s);
+			}
+		}
+		& p{
+			font-size: 18px;
+			line-height: 30px;
+			font-weight: 300;
+			color: #9aa3b2;
+			padding-top: 13px;
+			@media #{$md} {
+				padding-right: 40px;
+			}
+		}
+		&:hover{
+			& span{
+				margin-left: 0;
+				& i{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	& .sing-in{
+		position: relative;
+		padding-left: 37px;
+		margin-top: 52px;
+		margin-bottom: 120px;
+		&::before{
+			position: absolute;
+			content: '';
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 7px;
+			background: $theme-color;
+		}
+	}
+	& .experience-thumb{
+		position: relative;
+		z-index: 5;
+		margin-bottom: -23px;
+		@media #{$lg} {
+			margin-top: 140px;
+			margin-bottom: 0;
+		}
+		&::before{
+			position: absolute;
+			content: '';
+			right: 0;
+			top: 60px;
+			height: 490px;
+			width: 490px;
+			background: #121b2b;
+			border-top: 20px solid $theme-color;
+			border-left: 20px solid $theme-color;
+			z-index: -1;
+			@media #{$lg} {
+				width: 445px;
+				height: 445px;
+			}
+			@media #{$xs} {
+				width: 100%;
+			}
+		}
+	}
+	& .shape-1{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	& .shape-2{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+	}
+}

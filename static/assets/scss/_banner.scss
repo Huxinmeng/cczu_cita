@@ -1,0 +1,205 @@
+
+
+
+/*===========================
+    3.BANNER css 
+===========================*/
+
+
+
+.banner-area{
+	height: 830px;
+	position: relative;
+	z-index: 10;
+	&::before{
+		position: absolute;
+		content: '';
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		background: #000;
+		opacity: .3;
+	}
+	& .banner-content{
+		& span{
+			font-size: 22px;
+			color: $white;
+			background-color: rgba(18, 27, 43,.2);
+			line-height: 50px;
+			padding: 0 20px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			@media #{$xs} {
+				font-size: 18px;
+				line-height: 28px;
+			}
+		}
+		& .title{
+			font-size: 90px;
+			line-height: 100px;
+			color: $white;
+			text-transform: uppercase;
+			padding-top: 11px;
+			padding-bottom: 41px;
+			letter-spacing: 2.5px;
+			@media #{$lg} {
+				font-size: 76px;
+				line-height: 86px;
+			}
+			@media #{$md} {
+				font-size: 64px;
+				line-height: 74px;
+			}
+			@media #{$xs} {
+				font-size: 34px;
+				line-height: 44px;
+			}
+			@media #{$sm} {
+				font-size: 50px;
+				line-height: 60px;
+			}
+		}
+		& a{
+			box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+		}
+	}
+	&.banner-2-area{
+		z-index: 10;
+		& .banner-shadow{
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: .6;
+			width: 100%;
+			z-index: -1;
+			& img{
+				width: 100%;
+			}
+		}
+		&::before{
+			opacity: .6;
+		}
+		& .banner-content{
+			& .title{
+				padding-bottom: 31px;
+			}
+			& p{
+				font-size: 20px;
+				line-height: 34px;
+				color: $white;
+				padding-right: 200px;
+				padding-bottom: 42px;
+				@media #{$xs} {
+					padding-right: 0;
+				}
+			}
+		}
+		&.banner-3-area{
+			height: 970px;
+			&::before{
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				background: rgb(18, 27, 43);
+			}
+			& .banner-shadow{
+				position: absolute;
+				top: 0px;
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+.banner-slide{
+	& .slick-arrow{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 170px;
+		width: 50px;
+		text-align: center;
+		line-height: 170px;
+		background-color: rgba(255, 255, 255,.5);
+		z-index: 99;
+		cursor: pointer;
+		@include transition(0.3s);
+		font-size: 22px;
+		color: $heading-color;
+		&:hover{
+			background-color: rgb(255, 255, 255);
+		}
+		&.prev{
+			left: 0;
+		}
+		&.next{
+			right: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.page-title-area{
+	padding-bottom: 112px;
+	position: relative;
+	& .page-shadow{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	& .page-title-item{
+		& nav{
+			display: inline-block;
+			& ol{
+				background-color: rgba(18, 27, 43,.2);
+				padding: 12px 28px;
+				border-radius: 0;
+				margin: 0;
+				& li{
+					text-transform: uppercase;
+					color: $white;
+					letter-spacing: 1px;
+					& a{
+						color: $white;
+					}
+				}
+			}
+		}
+		& .title{
+			font-size: 60px;
+			text-transform: uppercase;
+			font-weight: 700;
+			color: $white;
+			padding-top: 13px;
+			@media #{$xs} {
+				font-size: 34px;
+			}
+		}
+	}
+}
+
+
+
+
+.breadcrumb-item + .breadcrumb-item::before {
+	display: inline-block;
+	padding-right: .5rem;
+	color: #fff;
+	content: "-";
+}

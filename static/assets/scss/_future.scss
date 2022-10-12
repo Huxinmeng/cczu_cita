@@ -1,0 +1,166 @@
+
+
+
+/*===========================
+    11.FUTURE css 
+===========================*/
+
+
+
+
+.future-area{
+	background: #f4f4f5;
+	padding-top: 120px;
+	padding-bottom: 120px;
+	position: relative;
+	z-index: 10;
+	& .features-shape{
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1;
+
+	}
+	& .future-thumb{
+		margin-right: 30px;
+		position: relative;
+		@media #{$md} {
+			margin-right: 0;
+		}
+		@media #{$xs} {
+			margin-right: 0;
+		}
+		& .experience{
+			position: absolute;
+			top: 35px;
+			left: -85px;
+			height: 170px;
+			width: 170px;
+			text-align: center;
+			line-height: 210px;
+			border-radius: 50%;
+			background: $theme-color;
+			@media #{$laptop} {
+				left: -15px;
+			}
+			@media #{$lg} {
+				left: -15px;
+			}
+			@media #{$md} {
+				left: -15px;
+			}
+			@media #{$xs} {
+				display: none;
+			}
+			@media #{$sm} {
+				left: -15px;
+				display: block;
+			}
+			& span{
+				font-size: 20px;
+				line-height: 24px;
+				text-transform: uppercase;
+				color: $white;
+			}
+		}
+		& img{
+			width: 100%;
+		}
+	}
+	& .future-content{
+		margin-top: -13px;
+		@media #{$md} {
+			margin-top: 30px;
+		}
+		@media #{$xs} {
+			margin-top: 30px;
+		}
+		& .title{
+			font-size: 50px;
+			font-weight: 400;
+			text-transform: uppercase;
+			@media #{$xs} {
+				font-size: 38px;
+			}
+		}
+		& p{
+			font-size: 18px;
+			color: #7e8591;
+			line-height: 34px;
+			font-weight: 300;
+			letter-spacing: .4px;
+			padding-right: 5px;
+			padding-top: 41px;
+		}
+	}
+	& .future-item{
+		margin-top: 46px;
+		& .title{
+			font-size: 16px;
+			color: $heading-color;
+			text-transform: uppercase;
+			font-weight: 400;
+			margin-left: -16px;
+			@include transition(0.3s);
+			& i{
+				color: $theme-color;
+				padding-right: 5px;
+				opacity: 0;
+				@include transition(0.3s);
+			}
+		}
+		& p{
+			color: #7e8591;
+			font-weight: 300;
+			padding-top: 10px;
+		}
+		&:hover{
+			& .title{
+				margin-left: 0;
+				& i{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	& .future-contact{
+		background: #192437;
+		padding: 28px 0 30px 170px ;
+		position: relative;
+		margin-top: 70px;
+		@media #{$lg} {
+			padding: 28px 0 30px 150px;
+		}
+		@media #{$xs} {
+			padding: 28px 0 30px 80px;
+		}
+		& i{
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 130px;
+			background: $theme-color;
+			color: $white;
+			font-size: 70px;
+			text-align: center;
+			@media #{$xs} {
+				width: 60px;
+				font-size: 44px;			}
+		}
+		& span{
+			font-size: 14px;
+			color: #b1bec5;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+		& a{
+			font-size: 30px;
+			color: $white;
+			line-height: 38px;
+			@media #{$xs} {
+				font-size: 26px;
+			}
+		}
+	}
+}

@@ -1,0 +1,85 @@
+
+
+/*===========================
+    18.HISTORY css 
+===========================*/
+
+
+
+
+.history-area{
+	padding-bottom: 116px;
+	& .history-item{
+		& .item{
+			border-bottom: 1px solid #eaeaea;
+			padding-bottom: 56px;
+			margin-bottom: 56px;
+			& .thumb{
+				min-width: 165px;
+				position: relative;
+				& img{
+					width: 100%;
+				}
+				& span{
+					position: absolute;
+					right: -23px;
+					bottom: 0;
+					height: 75px;
+					width: 75px;
+					text-align: center;
+					line-height: 75px;
+					background: $theme-color;
+					color: $white;
+				}
+			}
+			& .content{
+				padding-left: 82px;
+				@media #{$md} {
+					padding-left: 60px;
+				}
+				@media #{$xs} {
+					padding-left: 0px;
+					padding-top: 20px;
+				}
+				@media #{$sm} {
+					padding-left: 40px;
+					padding-top: 0;
+				}
+				& a{
+					font-size: 24px;
+					font-weight: 400;
+					color: $heading-color;
+					text-transform: uppercase;
+				}
+				& p{
+					font-size: 18px;
+					font-weight: 300;
+					color: #7f8692;
+					line-height: 34px;
+					padding-right: 90px;
+					padding-top: 40px;
+					@media #{$lg} {
+						padding-right: 0;
+					}
+					@media #{$md} {
+						padding-right: 0;
+						font-size: 16px;
+					}
+					@media #{$xs} {
+						padding-right: 0;
+						font-size: 15px;
+						padding-top: 15px;
+					}
+				}
+			}
+			&.item-4{
+				border-bottom: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+
+

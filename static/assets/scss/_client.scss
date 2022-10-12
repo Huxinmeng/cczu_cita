@@ -1,0 +1,259 @@
+
+
+
+/*===========================
+    8.CLIENT css 
+===========================*/
+
+
+
+
+
+.client-area{
+	padding-bottom: 60px;
+	position: relative;
+	z-index: 10;
+	& .client-title{
+		padding-bottom: 25px;
+		& .title{
+			font-size: 54px;
+			color: $heading-color;
+			font-weight: 400;
+			text-transform: uppercase;
+			@media #{$xs} {
+				font-size: 40px;
+			}
+		}
+	}
+	& .client-item{
+		padding: 60px;
+		border: 1px solid #eaeaea;
+		box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+		position: relative;
+		margin-bottom: 60px;
+		background: $white;
+		@media #{$md} {
+			padding: 30px;
+		}
+		@media #{$xs} {
+			padding: 30px;
+		}
+		@media #{$sm} {
+			padding: 60px;
+		}
+
+		& .shape{
+			position: absolute;
+			right: 26px;
+			top: 0;
+		}
+		& .user{
+			padding-left: 103px;
+			position: relative;
+			@media #{$xs} {
+				padding-left: 90px;
+			}
+			& .title{
+				font-size: 20px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+			& span{
+				font-size: 14px;
+				color: #ff5316;
+				text-transform: uppercase;
+				left: 1px;
+			}
+			& .user-thumb{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				& i{
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					height: 22px;
+					width: 22px;
+					text-align: center;
+					line-height: 22px;
+					color: $white;
+					font-size: 12px;
+					background: $theme-color;
+				}
+				& img{
+					width: 100%;
+				}
+			}
+		}
+		& .text{
+			& p{
+				padding-top: 42px;
+				font-size: 18px;
+				font-weight: 300;
+				color: #7e8591;
+				line-height: 34px;
+			}
+		}
+	}
+	& .client-active{
+		& .slick-dots{
+			position: absolute;
+			top: -75px;
+			right: 657px;
+			@media #{$laptop} {
+				right: 165px;
+			}
+			& li{
+				display: inline-block;
+				& button{
+					height: 7px;
+					width: 7px;
+					border-radius: 50%;
+					font-size: 0;
+					border: 0;
+					margin-left: 6px;
+					background: #babdc3;
+				}
+				&.slick-active{
+					& button{
+						background: $theme-color;
+					}
+				}
+			}
+		}
+	}
+	&.client-2-area{
+		background: #f4f4f5;
+		padding-top: 342px;
+		& .client-item{
+			background: $white;
+		}
+		& .client-shape{
+			bottom: 0;
+			top: auto;
+		}
+	}
+	&.client-about{
+		padding-top: 168px;
+		margin-top: -60px;
+	}
+	&.testimonials-client{
+		padding-bottom: 120px;
+		& .client-item{
+			margin-bottom: 0;
+			box-shadow: none;
+			@include transition(0.3s);
+			&:hover{
+				box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+			}
+		}
+	}
+	& .client-shape{
+		position: absolute;
+		left: 0;
+		top: -60px;
+		z-index: -1;
+	}
+	& .client-full{
+		left: calc((100% - 1200px) / 2);
+		position: relative;
+		@media #{$lg} {
+			left: calc((100% - 965px) / 2);
+		}
+		@media #{$md} {
+			position: static;
+		}
+		@media #{$xs} {
+			position: static;
+		}
+
+	}
+}
+
+
+
+
+
+.client-3-area{
+	position: relative;
+	&::before{
+		position: absolute;
+		content: '';
+		left: 0;
+		bottom: 0;
+		height: 370px;
+		width: 100%;
+		background-image: url(../images/news-bg-2.png);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	& .client-content{
+		& p{
+			font-weight: 300;
+			font-size: 40px;
+			line-height: 60px;
+			color: $heading-color;
+			padding: 0 40px;
+			@media #{$lg} {
+				padding: 0;
+				font-size: 36px;
+			}
+			@media #{$md} {
+				padding: 0;
+				font-size: 36px;
+			}
+			@media #{$xs} {
+				padding: 0;
+				font-size: 20px;
+				line-height: 30px;
+			}
+			@media #{$sm} {
+				font-size: 30px;
+				line-height: 40px;
+			}
+		}
+		& .title{
+			font-weight: 400;
+			font-size: 20px;
+			text-transform: uppercase;
+			color: $heading-color;
+			padding-top: 33px;
+		}
+		& span{
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: 400;
+			color: $theme-color;
+			display: block;
+		}
+		& .thumb{
+			display: inline-block;
+			margin-top: 32px;
+			position: relative;
+			& img{
+				width: 100%;
+			}
+			& i{
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				height: 22px;
+				width: 22px;
+				text-align: center;
+				line-height: 22px;
+				color: #fff;
+				font-size: 12px;
+				background: #ff5316;
+
+			}
+		}
+	}
+}
+
+
+
+
+
+

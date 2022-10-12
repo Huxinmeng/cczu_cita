@@ -1,0 +1,163 @@
+
+
+/*===========================
+    19.CONTACT css 
+===========================*/
+
+
+
+
+.conatct-area{
+	padding-top: 106px;
+	& .conatct-info{
+		margin-right: 90px;
+		@media #{$lg} {
+			margin-right: 30px;
+		}
+		@media #{$md} {
+			margin-right: 0px;
+		}
+		@media #{$xs} {
+			margin-right: 0px;
+		}
+		& .title{
+			font-size: 50px;
+			line-height: 60px;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 2px;
+			@media #{$lg} {
+				font-size: 44px;
+			}
+			@media #{$xs} {
+				font-size: 34px;
+				line-height: 44px;
+			}
+			& br{
+				@media #{$lg} {
+					display: none;
+				}
+				@media #{$md} {
+					display: none;
+				}
+				@media #{$xs} {
+					display: none;
+				}
+
+			}
+		}
+		& p{
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 34px;
+			color: #7e8591;
+			letter-spacing: .7px;
+			padding-top: 41px;
+			padding-bottom: 44px;
+		}
+	}
+	& .conatct-info-item{
+		margin-right: 90px;
+		@media #{$lg} {
+			margin-right: 30px;
+		}
+		@media #{$md} {
+			margin-right: 0px;
+		}
+		@media #{$xs} {
+			margin-right: 0px;
+		}
+		& .item{
+			padding-left: 58px;
+			position: relative;
+			& i{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 38px;
+				color: $theme-color;
+			}
+			& span{
+				font-size: 12px;
+				text-transform: uppercase;
+				color: #7f8692;
+				letter-spacing: 1px;
+			}
+			& p{
+				font-size: 14px;
+				color: $heading-color;
+			}
+			&.center{
+				margin-top: 50px;
+				margin-bottom: 50px;
+				position: relative;
+				&::before{
+					position: absolute;
+					content: '';
+					left: 0;
+					top: -25px;
+					height: 1px;
+					width: 100%;
+					background: #eaeaea;
+				}
+				&::after{
+					position: absolute;
+					content: '';
+					left: 0;
+					bottom: -25px;
+					height: 1px;
+					width: 100%;
+					background: #eaeaea;
+				}
+			}
+		}
+	}
+	& .comment-form{
+		margin-left: -30px;
+		@media #{$lg} {
+			margin-left: 0;
+		}
+		@media #{$md} {
+			margin-left: 0;
+			margin-top: 30px;
+		}
+		@media #{$xs} {
+			margin-left: 0;
+			margin-top: 30px;
+		}
+		& .input-box{
+			& textarea{
+				height: 290px;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.map{
+	& iframe{
+		width: 100%;
+		height: 560px;
+		margin-bottom: -6px;
+	}
+}

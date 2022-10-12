@@ -1,0 +1,138 @@
+
+
+
+/*===========================
+    8.FUN FACTS css 
+===========================*/
+
+
+
+
+
+.fun-facts-area{
+	position: relative;
+	z-index: 15;
+	& .fun-facts-bg{
+		background: $theme-color;
+		padding: 40px 0 75px;
+		position: relative;
+		z-index: 10;
+		& .shape{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: -1;
+			
+		}
+		& .fun-facts-item{
+			position: relative;
+			&::before{
+				position: absolute;
+				content: '';
+				right: -15px;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 110px;
+				width: 1px;
+				background-color: rgba(255, 255, 255,.2);
+			}
+			& .title{
+				color: $white;
+				font-size: 40px;
+				font-weight: 400;
+				font-family: $Oswald;
+			}
+			& > span{
+				font-weight: 300;
+				color: #ffe5dc;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				padding-top: 11px;
+				display: block;
+			}
+			&.item{
+				&::before{
+					display: none;
+				}
+			}
+		}
+	}
+	&.fun-facts-3-area{
+		background: $theme-color;
+	}
+}
+
+.odometer-formatting-mark{
+	display: none;
+}
+
+
+
+
+
+
+
+.fun-facts-2-area{
+	position: relative;
+	padding-top: 102px;
+	padding-bottom: 250px;
+	background-attachment: fixed;
+	&::before{
+		position: absolute;
+		content: '';
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(18, 27, 43,.8);
+
+	}
+	& .fun-facts-item{
+		& .item{
+			padding-left: 100px;
+			position: relative;
+			@media #{$xs} {
+				margin-bottom: 40px;
+				padding-left: 0;
+			}
+			@media #{$sm} {
+				margin-bottom: 40px;
+				padding-left: 100px;
+			}
+			& i{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 60px;
+				color: $theme-color;
+				@media #{$xs} {
+					position: static;
+					transform: translateY(0);
+				}
+				@media #{$sm} {
+					position: absolute;
+					transform: translateY(-50%);
+				}
+			}
+			& .title{
+				font-size: 80px;
+				font-weight: 300;
+				color: $white;
+				font-family: $Oswald;
+				@media #{$md} {
+					font-size: 60px;
+				}
+			}
+			& p{
+				font-size: 18px;
+				color: $white;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				padding-top: 6px;
+				display: block;
+			}
+		}
+	}
+}
+

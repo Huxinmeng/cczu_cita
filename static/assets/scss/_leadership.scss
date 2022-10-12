@@ -1,0 +1,158 @@
+
+
+/*===========================
+    14.LEADERSHIP css 
+===========================*/
+
+
+
+
+.leadership-area{
+	padding-top: 106px;
+	margin-bottom: -237px;
+	position: relative;
+	z-index: 11;
+	& .leadership-title{
+		padding-bottom: 23px;
+		& .title{
+			font-size: 50px;
+			text-transform: uppercase;
+			font-weight: 400;
+
+		}
+	}
+	& .leadership-item{
+		padding: 60px 60px 52px;
+		border: 1px solid #eaeaea;
+		background: $white;
+		@include transition(0.3s);
+		@media #{$lg} {
+			padding: 30px;
+		}
+		@media #{$md} {
+			padding: 40px;
+		}
+		@media #{$xs} {
+			padding: 20px;
+		}
+		@media #{$sm} {
+			padding: 60px 60px 52px;
+		}
+		& .leadership-thumb{
+			position: relative;
+			& .social{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				z-index: 10;
+				& > a{
+					height: 45px;
+					width: 45px;
+					text-align: center;
+					line-height: 45px;
+					background: $theme-color;
+					color: $white;
+					& i{
+						&::before{
+							@include transition(0.3s);
+						}
+					}
+				}
+				& ul{
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					display: flex;
+					z-index: -1;
+					opacity: 0;
+					@include transition(0.3s);
+					& li{
+						& a{
+							height: 45px;
+							width: 45px;
+							text-align: center;
+							line-height: 45px;
+							background: #121b2b;
+							color: #9aa3b2;
+							font-size: 14px;
+							&:hover{
+								color: $white;
+								@include transition(0.3s);
+							}
+						}
+
+					}
+				}
+			}
+			& img{
+				width: 100%;
+			}
+		}
+		& .leadership-content{
+
+			& h4{
+				font-size: 20px;
+				font-weight: 400;
+				text-transform: uppercase;
+				padding-top: 25px;
+			}
+			& span{
+				font-size: 14px;
+				text-transform: uppercase;
+				color: $theme-color;
+				padding-bottom: 9px;
+			}
+			& p{
+				font-size: 18px;
+				font-weight: 300;
+				color: #7e8591;
+				line-height: 34px;
+				padding: 0 10px;
+			}
+		}
+		&:hover{
+			box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+			& .leadership-thumb{
+				& .social{
+					& > a{
+						& i{
+							&::before{
+								content: "\f068";
+							}
+						}
+					}
+					ul{
+						opacity: 1;
+						left: 45px;
+					}
+				}
+			}
+
+		}
+	}
+	&.about-leadership{
+		padding-top: 0px;
+		margin-bottom: 0;
+		padding-bottom: 120px;
+		position: relative;
+		z-index: 10;
+		& .shape{
+			position: absolute;
+			right: 0;
+			top: 0px;
+			z-index: -1;
+		}
+	}
+	&.team-leadership{
+		padding-top: 90px;
+	}
+}
+
+
+
+
+
+
+
+
+

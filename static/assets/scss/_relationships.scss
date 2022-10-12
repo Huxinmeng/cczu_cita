@@ -1,0 +1,207 @@
+
+
+
+/*===========================
+    14.RELATIONSHIPS css 
+===========================*/
+
+
+
+.relationships-area{
+	margin-top: -120px;
+	& .relationships-item{
+		background: $theme-color;
+		padding: 47px 60px 60px;
+		position: relative;
+		@media #{$xs} {
+			padding: 10px;
+		}
+		@media #{$sm} {
+			padding: 47px 60px 60px;
+		}
+		& .relationships-awarded{
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			background: $white;
+			min-width: 330px;
+			padding-left: 140px;
+			padding-top: 45px;
+			padding-bottom: 45px;
+			@media #{$md} {
+				display: none;
+			}
+			@media #{$xs} {
+				display: none;
+			}
+			& i{
+				position: absolute;
+				left: 60px;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 60px;
+				color: $theme-color;
+			}
+			& span{
+				font-size: 20px;
+				line-height: 24px;
+				text-transform: uppercase;
+				color: $heading-color;
+
+			}
+		}
+		&::before{
+			position: absolute;
+			content: '';
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 50%;
+			background-image: url(../images/relationships-bg.jpg);
+			@media #{$md} {
+				width: 0;
+			}
+			@media #{$xs} {
+				width: 0;
+			}
+		}
+		& .relationships-content{
+			& .title{
+				font-size: 50px;
+				font-weight: 400;
+				color: $white;
+				line-height: 60px;
+				text-transform: uppercase;
+				@media #{$xs} {
+					font-size: 40px;
+					line-height: 50px;
+				}
+			}
+			& p{
+				font-size: 24px;
+				font-weight: 300;
+				color: $white;
+				line-height: 40px;
+				padding-top: 40px;
+				padding-bottom: 42px;
+				padding-right: 80px;
+				@media #{$xs} {
+					font-size: 22px;
+					padding-right: 0;
+				}
+			}
+			& ul{
+				& li{
+					font-size: 18px;
+					line-height: 40px;
+					font-weight: 300;
+					color: $white;
+					& i{
+						padding-right: 6px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+.skills {
+    position: relative;
+    margin-top: 46px;
+    margin-right: 45px;
+    @media #{$md} {
+        margin-bottom: 40px;
+    }
+    @media #{$xs} {
+        margin-bottom: 40px;
+        margin-right: 0;
+    }
+}
+
+.skills .skill-item {
+    position: relative;
+    margin-bottom: 27px;
+}
+
+.skills .skill-item .skill-header {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.skills .skill-item .skill-header .skill-title {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: $white;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+}
+
+.skills .skill-item .skill-header .skill-percentage {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ff5e14;
+}
+.skills .skill-item .skill-header .skill-percentage .count-box{
+    font-size: 14px;
+    font-weight: 400;
+    color: $white;
+    background: $theme-color;
+    line-height: 30px;
+    width: 52px;
+    text-align: center;
+    position: relative;
+    font-weight: 500;
+    &::before{
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 0;
+        width: 3px;
+        height: 57px;
+        background: $theme-color;
+    }
+}
+.skills .skill-item .skill-header .skill-percentage .count-box span{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.skills .skill-item:last-child {
+    margin-bottom: 0;
+}
+
+.skills .skill-item .skill-bar {
+    position: relative;
+    width: 100%;
+}
+
+.skills .skill-item .skill-bar .bar-inner {
+    position: relative;
+    width: 100%;
+    border-top: 4px solid #ff652e;
+    border-bottom: 4px solid #ff652e;
+    border-radius: 0px;
+}
+
+.skills .skill-item .skill-bar .bar-inner .bar {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 0;
+    height: 8px;
+    background: $white;
+    -webkit-transition: all 2000ms ease;
+    transition: all 2000ms ease;
+    border-radius: 0px;
+    margin-top: -3px;
+}
+
+

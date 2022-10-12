@@ -1,0 +1,322 @@
+
+
+
+/*===========================
+    10.faq css 
+===========================*/
+
+
+
+.faq-brand-area{
+    background-attachment: fixed;
+	& .brand-active{
+		padding-top: 120px;
+		padding-bottom: 120px;
+		border-bottom: 1px solid rgba(255, 255, 255,.2);
+		& .brand-item{
+			text-align: center;
+			& a{
+				& img{
+					display: inline-block;
+					opacity: .2;
+					@include transition(0.3s);
+				}
+				&:hover{
+					& img{
+						opacity: .8;
+					}
+				}
+			}
+		}
+	}
+	& .faq-items{
+		margin-top: 120px;
+		display: flex;
+        @media #{$xs} {
+            display: block;
+        }
+        @media #{$sm} {
+            display: flex;
+        }
+		& .faq-thumb{
+			& img{
+				width: 100%;
+			}
+		}
+		& .faq-content{
+			background: $theme-color;
+			margin-left: 30px;
+			padding-left: 60px;
+			padding-top: 55px;
+			min-width: 285px;
+            @media #{$xs} {
+                margin-left: 0;
+                min-width: auto;
+            }
+            @media #{$sm} {
+                margin-left: 30px;
+                min-width: 285px;
+            }
+			& p{
+				color: $white;
+				font-size: 20px;
+				line-height: 32px;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+.faq-accrodion{
+    margin-top: 70px;
+    margin-right: 70px;
+    @media #{$md} {
+        margin-top: 30px;
+        margin-right: 0;
+    }
+    @media #{$xs} {
+        margin-top: 30px;
+        margin-right: 0;
+    }
+    & .accrodion{
+        position: relative;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease;
+        background-color: #fff;
+        &::before{
+            content: '';
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: 0px;
+            right: 0px;
+            border-radius: 0px;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            background-image: -webkit-gradient(linear, left top, right top, from(var(--thm-primary)), to(var(--thm-base)));
+            background-image: linear-gradient(90deg, var(--thm-primary) 0%, var(--thm-base) 100%);
+            -webkit-transition: -webkit-transform .4s ease;
+            transition: -webkit-transform .4s ease;
+            border-radius: 5px;
+            transition: transform .4s ease;
+            transition: transform .4s ease, -webkit-transform .4s ease;
+
+        }
+        &+.accrodion{
+            margin-top: 10px;
+        }
+        &.active{
+            box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+            & .accrodion-inner{
+                margin: 0 1px;
+                background-color: transparent;
+                border-color: #dce0e8;
+            }
+            &::before{
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+
+            }
+            & .accrodion-title{
+                padding-bottom: 0;
+                & h4{
+                	color: $theme-color;
+                }
+                &::before{
+                    opacity: 0;
+                }
+                &::after{
+                    opacity: 1;
+                    color: $theme-color;
+                }
+            }
+        }
+        & .accrodion-inner{
+            background-color: transparent;
+            padding: 25px 0;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #dce0e8;
+            position: relative;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            border-radius: 0px;
+
+        }
+        & .accrodion-title{
+            padding: 0px 38px;
+            cursor: pointer;
+            position: relative;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            @media #{$xs} {
+                padding: 0 38px 0 20px;
+            }
+            &::before{
+                content: '+';
+                font-size: 32px;
+                color: $heading-color;
+                text-align: center;
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                opacity: 1;
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+                @media #{$xs} {
+                    right: 20px;
+                }
+            }
+            &::after{
+                content: '-';
+                font-weight: 900;
+                font-size: 32px;
+                color: $heading-color;
+                text-align: center;
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                opacity: 0;
+                -webkit-transition: all 500ms ease;
+                transition: all 500ms ease;
+                @media #{$xs} {
+                    right: 20px;
+                }
+
+            }
+            & h4{
+                margin: 0;
+                color: $heading-color;
+                font-size: 16px;
+                font-weight: 400;
+                text-transform: uppercase;
+
+            }
+        }
+        & .accrodion-content{
+            & .inner{
+                padding: 0 38px;
+                padding-right: 80px;
+                padding-top: 29px;
+                padding-bottom: 0px;
+                @media #{$lg} {
+                    padding: 15px 38px 0 40px;
+                }
+                @media #{$xs} {
+                    padding: 0 38px 0 20px;
+                }
+            }
+            & p{
+                margin: 0;
+                color: #838999;
+                font-size: 16px;
+                line-height: 30px;
+                font-weight: 300;
+
+            }
+        }
+    }
+}
+
+
+
+.faq-area{
+	& .faq-request-quote{
+		padding: 20px 20px 60px;
+		border: 1px solid #eaeaea;
+		box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.04);
+		margin-top: -232px;
+		background: $white;
+        @media #{$lg} {
+            margin-top: -185px;
+        }
+        @media #{$md} {
+            margin-top: 30px;
+        }
+        @media #{$xs} {
+            margin-top: 30px;
+        }
+		& span{
+			background: #192437;
+			line-height: 75px;
+			width: 100%;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 400;
+			color: $white;
+			text-transform: uppercase;
+			margin-bottom: 50px;
+		}
+		& .input-box{
+			margin: 10px 40px 0px;
+            @media #{$xs} {
+                margin: 10px 0 0;
+            }
+
+			& input{
+				width: 100%;
+				background: #f4f4f5;
+				line-height: 78px;
+				border: 0;
+				padding-left: 30px;
+				font-size: 16px;
+				font-weight: 300;
+				color: #7e8591;
+				&::placeholder{
+					opacity: 1;
+					color: #7e8591;
+				}
+			}
+			& textarea{
+				width: 100%;
+				background: #f4f4f5;
+				height: 169px;
+				border: 0;
+				padding-left: 30px;
+				resize: none;
+				padding-top: 20px;
+				font-size: 16px;
+				font-weight: 300;
+				color: #7e8591;
+				&::placeholder{
+					opacity: 1;
+					color: #7e8591;
+				}
+
+			}
+            & button{
+                &:hover{
+                    background: #192437;
+                    color: $white;
+                    border-color: #192437;
+                    &::before{
+                        background: $white;
+                    }
+                }
+            }
+		}
+	}
+}
+
