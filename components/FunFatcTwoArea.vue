@@ -1,5 +1,5 @@
 <template>
-  <section class="fun-facts-2-area bg_cover" style="background-image: url(/assets/images/fun-facts-bg.jpg);" v-observe-visibility="onVisibilityChange">
+  <section class="fun-facts-2-area bg_cover" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/fun-facts-bg.jpg);" v-observe-visibility="onVisibilityChange">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">

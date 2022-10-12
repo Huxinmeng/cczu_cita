@@ -115,10 +115,10 @@ p {
   outline: 0; }
 
 .banner-slide .slide-bg1 {
-  background-image: url("/assets/images/banner-bg-1.jpg");
+  background-image: url("https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/banner-bg-1.jpg");
 }
 .banner-slide .slide-bg2 {
-  background-image: url("/assets/images/banner-bg-2.jpg");
+  background-image: url("https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/banner-bg-2.jpg");
 }
 
 /*===== All Button Style =====*/

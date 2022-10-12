@@ -1,36 +1,36 @@
 <template>
-  <div class="faq-brand-area bg_cover" style="background-image: url(/assets/images/faq-bg.jpg);">
+  <div class="faq-brand-area bg_cover" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/faq-bg.jpg);">
     <div class="container">
       <div class="row brand-active">
         <swiper :options="swiperOptions">
           <swiper-slide>
           <div class="brand-item">
-            <a href="#"><img src="/assets/images/logo.png" alt="brand"></a>
+            <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png" alt="brand"></a>
           </div>
           </swiper-slide>
           <swiper-slide>
           <div class="brand-item">
-            <a href="#"><img src="/assets/images/logo.png" alt="brand"></a>
+            <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png" alt="brand"></a>
           </div>
           </swiper-slide>
           <swiper-slide>
           <div class="brand-item">
-            <a href="#"><img src="/assets/images/logo.png" alt="brand"></a>
+            <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png" alt="brand"></a>
           </div>
           </swiper-slide>
           <swiper-slide>
           <div class="brand-item">
-            <a href="#"><img src="/assets/images/logo.png" alt="brand"></a>
+            <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png" alt="brand"></a>
           </div>
           </swiper-slide>
           <swiper-slide>
           <div class="brand-item">
-            <a href="#"><img src="/assets/images/logo.png" alt="brand"></a>
+            <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png" alt="brand"></a>
           </div>
           </swiper-slide>
           <swiper-slide>
           <div class="brand-item">
-            <a href="#"><img src="/assets/images/logo.png" alt="brand"></a>
+            <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png" alt="brand"></a>
           </div>
           </swiper-slide>
         </swiper>
@@ -39,7 +39,7 @@
         <div class="col-lg-7">
           <div class="faq-items">
             <div class="faq-thumb">
-              <img src="/assets/images/faq-thumb.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/faq-thumb.jpg" alt="">
             </div>
             <div class="faq-content">
               <p>科技之火<br>可以燎原 </p>

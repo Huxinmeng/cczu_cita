@@ -9,7 +9,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="services-item mt-50">
               
-              <img src="/assets/images/services-1.jpg" alt="services">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-1.jpg" alt="services">
               <div class="icon">
                 <i class="flaticon-under-construction"></i>
               </div>
@@ -23,7 +23,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="services-item mt-50">
-              <img src="/assets/images/services-2.jpg" alt="services">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-2.jpg" alt="services">
               <div class="icon">
                 <i class="flaticon-industry"></i>
               </div>
@@ -37,7 +37,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="services-item mt-50">
-              <img src="/assets/images/services-3.jpg" alt="services">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-3.jpg" alt="services">
               <div class="icon">
                 <i class="flaticon-layout"></i>
               </div>
@@ -51,7 +51,7 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="services-item mt-50">
-              <img src="/assets/images/services-4.jpg" alt="services">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-4.jpg" alt="services">
               <div class="icon">
                 <i class="flaticon-under-construction-1"></i>
               </div>
@@ -67,7 +67,7 @@
       </div>
     </div>
     <div class="services-shape">
-      <img src="/assets/images/shape/shape-7.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-7.png" alt="">
     </div>
   </section>
 </template>

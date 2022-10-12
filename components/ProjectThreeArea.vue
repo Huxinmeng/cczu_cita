@@ -13,7 +13,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/project-1.jpg" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-1.jpg" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>Welding Processing</span></a>
@@ -24,7 +24,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/project-2.jpg" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-2.jpg" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>Bridge Construction</span></a>
@@ -35,7 +35,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/project-3.jpg" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-3.jpg" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>Build machinery</span></a>
@@ -46,7 +46,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/project-4.jpg" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-4.jpg" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>oil & gas production</span></a>
@@ -57,7 +57,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/project-5.jpg" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-5.jpg" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>Bridge Construction</span></a>

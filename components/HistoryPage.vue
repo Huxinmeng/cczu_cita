@@ -6,7 +6,7 @@
           <div class="history-item">
             <div class="item d-block d-sm-flex align-items-center">
               <div class="thumb">
-                <img src="/assets/images/history-1.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/history-1.jpg" alt="">
                 <span>1996</span>
               </div>
               <div class="content">
@@ -16,7 +16,7 @@
             </div>
             <div class="item d-block d-sm-flex align-items-center">
               <div class="thumb">
-                <img src="/assets/images/history-2.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/history-2.jpg" alt="">
                 <span>2001</span>
               </div>
               <div class="content">
@@ -26,7 +26,7 @@
             </div>
             <div class="item d-block d-sm-flex align-items-center">
               <div class="thumb">
-                <img src="/assets/images/history-3.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/history-3.jpg" alt="">
                 <span>2007</span>
               </div>
               <div class="content">
@@ -36,7 +36,7 @@
             </div>
             <div class="item d-block d-sm-flex align-items-center item-4">
               <div class="thumb">
-                <img src="/assets/images/history-4.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/history-4.jpg" alt="">
                 <span>2020</span>
               </div>
               <div class="content">

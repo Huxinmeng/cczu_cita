@@ -15,31 +15,31 @@
               <swiper :options="swiperOptions">
                 <swiper-slide>
                 <div class="project-item">
-                  <img src="/assets/images/project-item-1.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-item-1.jpg" alt="">
                   <a href="#">Welding Processing</a>
                 </div>
                 </swiper-slide>
                 <swiper-slide>
                 <div class="project-item">
-                  <img src="/assets/images/project-item-2.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-item-2.jpg" alt="">
                   <a href="#">Brdige construction</a>
                 </div>
                 </swiper-slide>
                 <swiper-slide>
                 <div class="project-item">
-                  <img src="/assets/images/project-item-3.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-item-3.jpg" alt="">
                   <a href="#">Build machinery</a>
                 </div>
                 </swiper-slide>
                 <swiper-slide>
                 <div class="project-item">
-                  <img src="/assets/images/project-item-1.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-item-1.jpg" alt="">
                   <a href="#">Welding Processing</a>
                 </div>
                 </swiper-slide>
                 <swiper-slide>
                 <div class="project-item">
-                  <img src="/assets/images/project-item-2.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project-item-2.jpg" alt="">
                   <a href="#">Brdige construction</a>
                 </div>
                 </swiper-slide>
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="shape animated wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-9.png" alt="shape">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-9.png" alt="shape">
     </div>
   </section>
 </template>

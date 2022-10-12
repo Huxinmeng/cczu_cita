@@ -13,7 +13,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/spider.png" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/spider.png" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>电商爬虫及可视化分析</span></a>
@@ -24,7 +24,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/car.png" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/car.png" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>汽车推荐系统</span></a>
@@ -35,7 +35,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/stock.png" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/stock.png" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>股票K线</span></a>
@@ -46,7 +46,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/visual.png" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/visual.png" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>招投标行业可视化</span></a>
@@ -57,7 +57,7 @@
           <swiper-slide>
           <div class="project-item mt-30">
             <div class="project-thumb">
-              <img src="/assets/images/tianqin.png" alt="projects">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/tianqin.png" alt="projects">
             </div>
             <div class="project-content">
               <a href="#"><span>天琴工作室</span></a>

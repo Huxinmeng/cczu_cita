@@ -13,7 +13,7 @@
         <div class="col-lg-4 col-md-7 col-sm-9">
           <div class="news-item mt-30 animated wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
             <div class="news-thumb">
-              <img src="/assets/images/news-1.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-1.png" alt="news">
             </div>
             <div class="news-content text-center">
               <a href="/single-post">We Believe in Building Long Lasting our Business Relationships</a>
@@ -26,7 +26,7 @@
         <div class="col-lg-4 col-md-7 col-sm-9">
           <div class="news-item mt-30 animated wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
             <div class="news-thumb">
-              <img src="/assets/images/news-2.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-2.png" alt="news">
             </div>
             <div class="news-content text-center">
               <a href="/single-post">We Believe in Building Long Lasting our Business Relationships</a>
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="shape">
-      <img src="/assets/images/shape/shape-11.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-11.png" alt="">
     </div>
   </section>
 </template>

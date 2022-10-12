@@ -5,7 +5,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="services-item mt-30">
             <div class="services-thumb">
-              <img src="/assets/images/services-5.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-5.jpg" alt="">
               <div class="icon">
                 <i class="flaticon-under-construction"></i>
               </div>
@@ -20,7 +20,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="services-item mt-30">
             <div class="services-thumb">
-              <img src="/assets/images/services-6.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-6.jpg" alt="">
               <div class="icon">
                 <i class="flaticon-industry"></i>
               </div>
@@ -35,7 +35,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="services-item mt-30">
             <div class="services-thumb">
-              <img src="/assets/images/services-7.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-7.jpg" alt="">
               <div class="icon">
                 <i class="flaticon-layout"></i>
               </div>
@@ -50,7 +50,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="services-item mt-30">
             <div class="services-thumb">
-              <img src="/assets/images/services-8.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-8.jpg" alt="">
               <div class="icon">
                 <i class="flaticon-under-construction-1"></i>
               </div>
@@ -65,7 +65,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="services-item mt-30">
             <div class="services-thumb">
-              <img src="/assets/images/services-9.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-9.jpg" alt="">
               <div class="icon">
                 <i class="flaticon-creative-design"></i>
               </div>
@@ -80,7 +80,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="services-item mt-30">
             <div class="services-thumb">
-              <img src="/assets/images/services-10.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/services-10.jpg" alt="">
               <div class="icon">
                 <i class="flaticon-factory"></i>
               </div>

@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="bulidings-shape animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-14.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-14.png" alt="">
     </div>
   </section>
 </template>

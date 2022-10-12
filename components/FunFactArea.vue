@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="shape">
-          <img src="/assets/images/shape/shape-17.png" alt="shape">
+          <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-17.png" alt="shape">
         </div>
       </div>
     </div>

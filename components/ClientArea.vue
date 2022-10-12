@@ -14,11 +14,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/sun_resize.jpg" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/sun_resize.jpg" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">孙威</h5>
@@ -33,11 +33,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/zhu_resize.jpg" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/zhu_resize.jpg" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">朱珠</h5>
@@ -51,11 +51,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/yuan_resize.jpg" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/yuan_resize.jpg" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">苑进延</h5>
@@ -69,11 +69,11 @@
             <!-- <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/client-user-2.png" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-2.png" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">Mike hardson</h5>
@@ -89,7 +89,7 @@
       </div>
     </div>
     <div class="client-shape animated wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-15.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-15.png" alt="">
     </div>
   </section>
 </template>

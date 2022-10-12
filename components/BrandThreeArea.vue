@@ -5,32 +5,32 @@
         <swiper :options="swiperOptions">
           <swiper-slide>
             <div class="brand-item">
-              <a href="#"><img src="/assets/images/brand-1.png" alt="brand"></a>
+              <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/brand-1.png" alt="brand"></a>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="brand-item">
-              <a href="#"><img src="/assets/images/brand-1.png" alt="brand"></a>
+              <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/brand-1.png" alt="brand"></a>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="brand-item">
-              <a href="#"><img src="/assets/images/brand-1.png" alt="brand"></a>
+              <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/brand-1.png" alt="brand"></a>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="brand-item">
-              <a href="#"><img src="/assets/images/brand-1.png" alt="brand"></a>
+              <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/brand-1.png" alt="brand"></a>
             </div>
             <swiper-slide>
             </swiper-slide>
             <div class="brand-item">
-              <a href="#"><img src="/assets/images/brand-1.png" alt="brand"></a>
+              <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/brand-1.png" alt="brand"></a>
             </div>
             <swiper-slide>
             </swiper-slide>
             <div class="brand-item">
-              <a href="#"><img src="/assets/images/brand-1.png" alt="brand"></a>
+              <a href="#"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/brand-1.png" alt="brand"></a>
             </div>
           </swiper-slide>
         </swiper>

@@ -14,11 +14,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/client-user-1.png" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-1.png" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">Shirley Smith</h5>
@@ -32,11 +32,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/client-user-2.png" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-2.png" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">Mike hardson</h5>
@@ -50,11 +50,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/client-user-3.png" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-3.png" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">Sarah Albert</h5>
@@ -68,11 +68,11 @@
             <swiper-slide>
             <div class="client-item mt-30">
               <div class="shape">
-                <img src="/assets/images/shape/shape-4.png" alt="shape">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-4.png" alt="shape">
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img src="/assets/images/client-user-2.png" alt="client">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-2.png" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
                 <h5 class="title">Mike hardson</h5>
@@ -88,7 +88,7 @@
       </div>
     </div>
     <div class="client-shape animated wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-16.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-16.png" alt="">
     </div>
   </section>
 </template>

@@ -11,7 +11,7 @@
               <h5 class="title">Shirley Smith</h5>
               <span>Director</span>
               <div class="thumb">
-                <img src="/assets/images/client-user-1.png" alt="user">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-1.png" alt="user">
                 <i class="fa fa-quote-left"></i>
               </div>
             </div>
@@ -22,7 +22,7 @@
               <h5 class="title">Mike hardson</h5>
               <span>manager</span>
               <div class="thumb">
-                <img src="/assets/images/client-user-2.png" alt="user">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-2.png" alt="user">
                 <i class="fa fa-quote-left"></i>
               </div>
             </div>
@@ -33,7 +33,7 @@
               <h5 class="title">Sarah Albert</h5>
               <span>marketer</span>
               <div class="thumb">
-                <img src="/assets/images/client-user-3.png" alt="user">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/client-user-3.png" alt="user">
                 <i class="fa fa-quote-left"></i>
               </div>
             </div>

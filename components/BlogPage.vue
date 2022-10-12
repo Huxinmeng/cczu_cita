@@ -5,7 +5,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-1.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-1.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -18,7 +18,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-2.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-2.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -31,7 +31,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-3.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-3.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -44,7 +44,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-4.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-4.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -57,7 +57,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-5.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-5.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -70,7 +70,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-6.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-6.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -83,7 +83,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-7.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-7.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -96,7 +96,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-8.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-8.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
@@ -109,7 +109,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="/assets/images/news-9.png" alt="news">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-9.png" alt="news">
             </div>
             <div class="news-content text-center">
               <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>

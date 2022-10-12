@@ -7,7 +7,7 @@
             <h3 class="title">Need a quality contractor <br> for your project</h3>
             <a class="main-btn main-btn-2" href="#">Contact now</a>
             <div class="shape">
-              <img src="/assets/images/shape/shape-5.png" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-5.png" alt="">
             </div>
           </div>
         </div>

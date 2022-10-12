@@ -55,7 +55,7 @@
         </div>
       </div>
     <div class="shape">
-      <img src="/assets/images/shape/shape-11.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-11.png" alt="">
     </div>
   </section>
 </template>

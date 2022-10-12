@@ -5,7 +5,7 @@
         <div class="col-lg-8">
           <div class="blog-details__main">
             <div class="blog-details__image">
-              <img src="/assets/images/blog-details-thumb.jpg" alt="thumb">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/blog-details-thumb.jpg" alt="thumb">
               <span>06 April, 2020   <span>-    2 Comments</span></span>
             </div><!-- /.blog-details__image -->
             <div class="blog-details__content">
@@ -30,7 +30,7 @@
 
           <div class="blog-author">
             <div class="blog-author__image">
-              <img src="/assets/images/author.jpg" alt="author">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/author.jpg" alt="author">
             </div><!-- /.blog-author__image -->
             <div class="blog-author__content">
               <h3>Christine Eve </h3>
@@ -42,7 +42,7 @@
             <h3 class="comment-one__block-title">2 Comments</h3><!-- /.comment-one__block-title -->
             <div class="comment-one__single">
               <div class="comment-one__image">
-                <img src="/assets/images/comment-1-1.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/comment-1-1.jpg" alt="">
               </div><!-- /.comment-one__image -->
               <div class="comment-one__content">
                 <h3>Kevin Martin <span class="comment-one__date">20 April, 2020</span></h3>
@@ -56,7 +56,7 @@
             </div><!-- /.comment-one__single -->
             <div class="comment-one__single">
               <div class="comment-one__image">
-                <img src="/assets/images/comment-1-2.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/comment-1-2.jpg" alt="">
               </div><!-- /.comment-one__image -->
               <div class="comment-one__content">
                 <h3>Sarah albert <span class="comment-one__date">20 April, 2020</span></h3>
@@ -120,7 +120,7 @@
               <div class="sidebar__post-wrap">
                 <div class="sidebar__post__single">
                   <div class="sidebar__post-image">
-                    <div class="inner-block"><img src="/assets/images/post-1.png" alt="Awesome Image"></div>
+                    <div class="inner-block"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/post-1.png" alt="Awesome Image"></div>
                     <!-- /.inner-block -->
                   </div><!-- /.sidebar__post-image -->
                   <div class="sidebar__post-content">
@@ -131,7 +131,7 @@
                 </div><!-- /.sidebar__post__single -->
                 <div class="sidebar__post__single">
                   <div class="sidebar__post-image">
-                    <div class="inner-block"><img src="/assets/images/post-2.png" alt="Awesome Image"></div>
+                    <div class="inner-block"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/post-2.png" alt="Awesome Image"></div>
                     <!-- /.inner-block -->
                   </div><!-- /.sidebar__post-image -->
                   <div class="sidebar__post-content">
@@ -142,7 +142,7 @@
                 </div><!-- /.sidebar__post__single -->
                 <div class="sidebar__post__single item">
                   <div class="sidebar__post-image">
-                    <div class="inner-block"><img src="/assets/images/post-3.png" alt="Awesome Image"></div>
+                    <div class="inner-block"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/post-3.png" alt="Awesome Image"></div>
                     <!-- /.inner-block -->
                   </div><!-- /.sidebar__post-image -->
                   <div class="sidebar__post-content">

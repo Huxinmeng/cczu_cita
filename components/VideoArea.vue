@@ -1,5 +1,5 @@
 <template>
-  <section class="video-area bg_cover pt-150 pb-115" style="background-image: url(/assets/images/video-bg.jpg);">
+  <section class="video-area bg_cover pt-150 pb-115" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/video-bg.jpg);">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
@@ -11,10 +11,10 @@
       </div>
     </div>
     <div class="shape-1">
-      <img src="/assets/images/shape/shape-2.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-2.png" alt="">
     </div>
     <div class="shape-2">
-      <img src="/assets/images/shape/shape-3.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-3.png" alt="">
     </div>
   </section>
 </template>

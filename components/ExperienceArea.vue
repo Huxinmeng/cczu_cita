@@ -33,21 +33,21 @@
             </div>
           </div>
           <div class="sing-in">
-            <img src="/assets/images/singin.png" alt="singin">
+            <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/singin.png" alt="singin">
           </div>
         </div>
         <div class="col-lg-6">
           <div class="experience-thumb animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <img src="/assets/images/experience-thumb.png" alt="experience">
+            <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/experience-thumb.png" alt="experience">
           </div>
         </div>
       </div>
     </div>
     <div class="shape-1 animated wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-6.png" alt="shape">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-6.png" alt="shape">
     </div>
     <div class="shape-2">
-      <img src="/assets/images/shape/shape-5.png" alt="shape">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-5.png" alt="shape">
     </div>
   </section>
 </template>

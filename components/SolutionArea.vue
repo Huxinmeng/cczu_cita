@@ -4,9 +4,9 @@
       <div class="row">
         <div class="col-lg-5">
           <div class="solution-thumb animated wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
-            <img src="/assets/images/solution-thumb.jpg" alt="">
+            <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/solution-thumb.jpg" alt="">
             <div class="shape">
-              <img src="/assets/images/shape/shape-1.png" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-1.png" alt="">
             </div>
           </div>
         </div>
@@ -39,10 +39,10 @@
             </div>
             <div class="solution-user  d-flex align-items-center">
               <div class="user">
-                <img src="/assets/images/solution-user.png" alt="user">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/solution-user.png" alt="user">
               </div>
               <div class="sing">
-                <img src="/assets/images/solution-sing.png" alt="user">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/solution-sing.png" alt="user">
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div class="solution-shape animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-13.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-13.png" alt="">
     </div>
   </section>
 </template>

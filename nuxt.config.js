@@ -12,7 +12,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'shortcut icon', sizes: '32*32', type: 'image/ico', href: '/assets/images/bitbug_favicon.ico' },
+      { rel: 'shortcut icon', sizes: '32*32', type: 'image/ico', href: 'https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/bitbug_favicon.ico' },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" },
       { rel: "stylesheet", href: "/assets/css/bootstrap.min.css" },
       { rel: "stylesheet", href: "/assets/css/animate.min.css" },

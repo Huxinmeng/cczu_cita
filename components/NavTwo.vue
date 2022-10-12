@@ -32,7 +32,7 @@
             <div class="main-header-item d-flex justify-content-between align-items-center">
               <div class="main-header-menus  d-flex">
                 <div class="header-logo">
-                  <a href="/index-2"><img src="/assets/images/logo-2.png" alt="logo"></a>
+                  <a href="/index-2"><img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo-2.png" alt="logo"></a>
                 </div>
                 <div class="toggle-btn ml-30 canvas_open">
                   <i @click="mobileToggle = !mobileToggle" class="fa fa-bars"></i>

@@ -10,7 +10,7 @@
             </div>
             <div class="about-item d-block d-sm-flex align-items-center">
               <div class="about-item-thumb">
-                <img src="/assets/images/about-item.jpg" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/about-item.jpg" alt="">
               </div>
               <div class="about-item-content">
                 <h4 class="title">build. That’s how we’d like <br> the world to be.</h4>
@@ -23,16 +23,16 @@
           <div class="about-right-content">
             <div class="about-thumb animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
               <div class="shape">
-                <img src="/assets/images/shape/shape-10.png" alt="">
+                <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-10.png" alt="">
               </div>
-              <img src="/assets/images/about-thumb-1.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/about-thumb-1.jpg" alt="">
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="shape">
-      <img src="/assets/images/shape/shape-13.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-13.png" alt="">
     </div>
   </section>
 </template>

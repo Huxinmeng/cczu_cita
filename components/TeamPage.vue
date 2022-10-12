@@ -5,7 +5,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-1.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-1.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -25,7 +25,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-2.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-2.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -45,7 +45,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-3.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-3.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -65,7 +65,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-4.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-4.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -85,7 +85,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-5.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-5.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -105,7 +105,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-6.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-6.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>

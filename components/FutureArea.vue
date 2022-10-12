@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="future-thumb">
-            <img src="/assets/images/future-thumb.png" alt="">
+            <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/future-thumb.png" alt="">
             <div class="experience  animated wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
               <span>30+ <br> years <br> experience</span>
             </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="features-shape">
-      <img src="/assets/images/shape/shape-11.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-11.png" alt="">
     </div>
   </section>
 </template>

@@ -24,7 +24,7 @@
         <div class="col-lg-8 order-lg-2 order-1">
           <div class="single-project mt-30">
             <div class="single-project-thumb">
-              <img src="/assets/images/single-project-thumb-1.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/single-project-thumb-1.jpg" alt="">
             </div>
             <div class="single-project-content">
               <h3 class="title">Factory Construction</h3>
@@ -33,12 +33,12 @@
             <div class="row">
               <div class="col-lg-6 col-md-6">
                 <div class="single-project-thumb mt-30">
-                  <img src="/assets/images/single-project-thumb-2.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/single-project-thumb-2.jpg" alt="">
                 </div>
               </div>
               <div class="col-lg-6 col-md-6">
                 <div class="single-project-thumb mt-30">
-                  <img src="/assets/images/single-project-thumb-3.jpg" alt="">
+                  <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/single-project-thumb-3.jpg" alt="">
                 </div>
               </div>
             </div>

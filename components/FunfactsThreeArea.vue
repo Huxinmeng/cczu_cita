@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="shape">
-          <img src="/assets/images/shape/shape-5.png" alt="shape">
+          <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-5.png" alt="shape">
         </div>
       </div>
     </div>

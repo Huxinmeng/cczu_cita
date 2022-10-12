@@ -12,7 +12,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-1.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-1.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -32,7 +32,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-2.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-2.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -52,7 +52,7 @@
         <div class="col-lg-4 col-md-6 col-sm-9">
           <div class="leadership-item mt-30">
             <div class="leadership-thumb">
-              <img src="/assets/images/team-3.jpg" alt="">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/team-3.jpg" alt="">
               <div class="social">
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <ul>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="shape animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-13.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-13.png" alt="">
     </div>
   </section>
 </template>

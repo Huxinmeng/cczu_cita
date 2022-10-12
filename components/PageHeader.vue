@@ -1,5 +1,5 @@
 <template>
-  <div class="page-title-area bg_cover pt-120" style="background-image: url(/assets/images/page-bg.jpg);">
+  <div class="page-title-area bg_cover pt-120" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/page-bg.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="page-shadow">
-      <img src="/assets/images/page-shadow.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/page-shadow.png" alt="">
     </div>
   </div>
 </template>

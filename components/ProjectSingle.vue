@@ -5,7 +5,7 @@
         <div class="col-lg-12">
           <div class="single-project">
             <div class="single-project-thumb">
-              <img src="/assets/images/project/single-project-thumb.jpg" alt="project">
+              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/project/single-project-thumb.jpg" alt="project">
               <div class="single-project-thumb-content d-flex">
                 <ul>
                   <li>Date:</li>

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="solution-thumb animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="0ms">
-            <img src="/assets/images/solution-thumb-2.png" alt="thumb">
+            <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/solution-thumb-2.png" alt="thumb">
           </div>
         </div>
         <div class="col-lg-6">
@@ -30,7 +30,7 @@
               <div class="play">
                 <a href="https://www.youtube.com/watch?v=D68knED_2mQ" class="d-flex align-items-center video-popup">
                   <div class="thumb">
-                    <img src="/assets/images/solution-play.png" alt="">
+                    <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/solution-play.png" alt="">
                   </div>
                   <span>Video About <br> constructions</span>
                 </a>
@@ -41,10 +41,10 @@
       </div>
     </div>
     <div class="shape-1">
-      <img src="/assets/images/shape/shape-7.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-7.png" alt="">
     </div>
     <div class="shape-2 animated wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
-      <img src="/assets/images/shape/shape-8.png" alt="">
+      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-8.png" alt="">
     </div>
   </section>
 </template>
