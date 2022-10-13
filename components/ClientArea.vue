@@ -18,14 +18,14 @@
               </div>
               <div class="user">
                 <div class="user-thumb">
-                  <img :src="it['TeacherModel'].img_url" alt="client">
+                  <img :src="it.img_url" alt="client">
                   <i class="fa fa-quote-left"></i>
                 </div>
-                <h5 class="title">{{it["TeacherModel"].name}}</h5>
-                <span>{{it["TeacherModel"].position}}</span>
+                <h5 class="title">{{it.name}}</h5>
+                <span>{{it.position}}</span>
               </div>
               <div class="text">
-                <p>{{it["TeacherModel"].description}}
+                <p>{{it.description}}
 </p>
               </div>
             </div>
@@ -142,9 +142,10 @@
     },
     methods:{
      async getTeacherData() {
-      const ip = await this.$axios.$get("/index/list-teacher");
-       console.log(ip);
-       this.teacherList=ip;
+      const teacher = await this.$axios.$get("/index/list-teacher");
+       console.log(teacher);
+       if(teacher['code']!=0) return;
+       this.teacherList=teacher["data"];
      },
     }
   }
