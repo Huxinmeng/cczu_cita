@@ -143,7 +143,7 @@
     methods:{
      async getTeacherData() {
       const teacher = await this.$axios.$get("/index/list-teacher");
-       console.log(teacher);
+      //  console.log(teacher);
        if(teacher['code']!=0) return;
        this.teacherList=teacher["data"];
      },
