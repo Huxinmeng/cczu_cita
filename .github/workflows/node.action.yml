@@ -33,7 +33,7 @@ jobs:
     - name: upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ martrix.node-version }}
+        name: ${{ matrix.node-version }}
         path: dist_nuxt
       
     - name: release
