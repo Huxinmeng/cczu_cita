@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
->>>>>>> c3754cda09ab91f19499ce835fc24302d2e6f2e0
 name: Node.js CI
 
 on:
@@ -19,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [14.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -31,22 +28,17 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
     
     - name: upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ martrix.node-version }}
+        name: ${{ matrix.node-version }}
         path: dist_nuxt
       
     - name: release
-      uses: softprops/action-gh-release@main
+      uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-<<<<<<< HEAD
-        files:"dist_nuxt/**"
-=======
         files: "dist_nuxt/**"
->>>>>>> c3754cda09ab91f19499ce835fc24302d2e6f2e0
