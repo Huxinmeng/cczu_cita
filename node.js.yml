@@ -30,7 +30,7 @@ jobs:
     - name: upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: ${{ martrix.node-version }}
+        name: ${{ matrix.node-version }}
         path: dist_nuxt
       
     - name: release
@@ -39,4 +39,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        files:"dist_nuxt/**"
+        files: "dist_nuxt/**"

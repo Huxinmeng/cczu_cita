@@ -103,18 +103,18 @@
                   <h4 class="title">最新活动</h4>
                 </div>
                 <div class="footer-news-content">
-                  <div class="news-item d-flex align-items-center">
+                  <div class="news-item d-flex align-items-center  mt-20" v-for="it in  activityList.slice(0,2)" :key="it.id">
                     <div class="news-item-thumb">
-                      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/footer-news-1.jpg" alt="" />
+                      <img :src="it.resize_img_url" alt="" />
                     </div>
                     <div class="news-item-content">
-                      <span> 2022/9/30</span>
-                      <a href="#"
-                        >线下面试</a
+                      <span>{{it.time.split('T')[0]}}</span>
+                      <a 
+                        >{{it.first_title}}</a
                       >
                     </div>
                   </div>
-                  <div class="news-item d-flex align-items-center mt-20">
+                  <!-- <div class="news-item d-flex align-items-center  mt-20">
                     <div class="news-item-thumb">
                       <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/footer-news-2.jpg" alt="" />
                     </div>
@@ -124,7 +124,7 @@
                         >线下面试</a
                       >
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -173,6 +173,7 @@ export default {
   data() {
     return {
       scrollBtn: false,
+       activityList:[]
     };
   },
   mounted() {
@@ -181,6 +182,9 @@ export default {
   // created() {
   //   this.asyncData();
   // },
+  created() {
+    this.getActivityData();
+  },
 
   methods: {
     handleScroll() {
@@ -193,6 +197,12 @@ export default {
 
     scrollTop() {
       window.scrollTo(0, 0);
+    },
+      async getActivityData() {
+      const activity = await this.$axios.$get("/index/latest-activity");
+      console.log(activity["data"]);
+      if (activity["code"] != 0) return;
+      this.activityList = activity["data"];
     },
     // async asyncData() {
     //   const ip = await this.$axios.$get("/index/list-teacher");
