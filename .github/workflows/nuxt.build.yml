@@ -47,4 +47,3 @@ jobs:
         asset_path: ./release.tgz
         asset_name: release.tgz
         asset_content_type: application/x-tgz
-
