@@ -8,13 +8,13 @@
           </div>
       <div class="fun-facts-bg">
         <div class="row">
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-3 col-md-6" v-for="item in awardata" :key="item.id">
             <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
-              <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 3 : 0' :duration='3000'></countTo></h3>
-              <span>国家级奖项</span>
+              <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? item.count : 0' :duration='3000'></countTo></h3>
+              <span>{{item.type}}</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <!-- <div class="col-lg-3 col-md-6">
             <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
               <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 29 : 0' :duration='3000'></countTo></h3>
               <span>省奖项</span>
@@ -31,7 +31,7 @@
               <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 38 : 0' :duration='3000'></countTo></h3>
               <span>总奖项</span>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="shape">
           <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-17.png" alt="shape">
@@ -52,8 +52,12 @@
     },
     data() {
       return{
+        awardata:[],
         startCounter: false
       }
+    },
+    created(){
+        this.awardData();
     },
     methods: {
       onVisibilityChange (isVisible) {
@@ -62,6 +66,12 @@
         }
 
       },
+        async awardData() {
+      const award = await this.$axios.$get("/index/get-award-count");
+      console.log(award["data"]);
+      if (award["code"] != 0) return;
+      this.awardata =award["data"];
+    },
     }
   }
 </script>
