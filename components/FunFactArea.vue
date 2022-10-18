@@ -8,19 +8,19 @@
           </div>
       <div class="fun-facts-bg">
         <div class="row">
-          <div class="col-lg-3 col-md-6" v-for="item in awardata" :key="item.id">
+          <div class="col-lg-3 col-md-6" v-for="item in awardata.slice(0,3)" :key="item.id">
             <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0ms">
               <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? item.count : 0' :duration='3000'></countTo></h3>
               <span>{{item.type}}</span>
             </div>
           </div>
-          <!-- <div class="col-lg-3 col-md-6">
+           <div class="col-lg-3 col-md-6">
             <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="100ms">
-              <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 29 : 0' :duration='3000'></countTo></h3>
-              <span>省奖项</span>
+              <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? alldata : 0' :duration='3000'></countTo></h3>
+              <span>总奖项</span>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
+          <!-- <div class="col-lg-3 col-md-6">
             <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
               <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 6 : 0' :duration='3000'></countTo></h3>
               <span>校级奖项</span>
@@ -31,7 +31,7 @@
               <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 38 : 0' :duration='3000'></countTo></h3>
               <span>总奖项</span>
             </div>
-          </div> -->
+          </div>  -->
         </div>
         <div class="shape">
           <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-17.png" alt="shape">
@@ -53,6 +53,7 @@
     data() {
       return{
         awardata:[],
+        alldata:0,
         startCounter: false
       }
     },
@@ -71,6 +72,8 @@
       console.log(award["data"]);
       if (award["code"] != 0) return;
       this.awardata =award["data"];
+     
+        this.alldata=award["data"][0]['count']+award["data"][1]['count']+award["data"][2]['count']
     },
     }
   }
