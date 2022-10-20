@@ -19,7 +19,7 @@
                 />
               </div>
               <div class="project-content">
-                <a href="#" v-if="it.detail_page_url==null"><span>{{it.project_name}}</span></a>
+                <a v-if="it.detail_page_url==null" :href="it.project_url" ><span>{{it.project_name}}</span></a>
                  <a v-else :href="it.project_url" ><span>{{it.project_name}}</span></a>
                 <p>recent project</p>
               </div>

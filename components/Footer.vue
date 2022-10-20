@@ -168,6 +168,7 @@
 </template>
 
 <script>
+import Utils from './utils.js'
 export default {
   name: "Footer",
   data() {
@@ -178,12 +179,20 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    
+      var vm = this
+      // 用$on事件来接收参数
+      Utils.$on('val', (data) => {
+        console.log(data)
+        vm.activityList = data
+      })
+
   },
   // created() {
   //   this.asyncData();
   // },
   created() {
-    this.getActivityData();
+    // this.getActivityData();
   },
 
   methods: {
@@ -198,12 +207,12 @@ export default {
     scrollTop() {
       window.scrollTo(0, 0);
     },
-      async getActivityData() {
-      const activity = await this.$axios.$get("/index/latest-activity");
-      console.log(activity["data"]);
-      if (activity["code"] != 0) return;
-      this.activityList = activity["data"];
-    },
+    //   async getActivityData() {
+    //   const activity = await this.$axios.$get("/index/latest-activity");
+    //   console.log(activity["data"]);
+    //   if (activity["code"] != 0) return;
+    //   this.activityList = activity["data"];
+    // },
     // async asyncData() {
     //   const ip = await this.$axios.$get("/index/list-teacher");
     //   console.log(ip);

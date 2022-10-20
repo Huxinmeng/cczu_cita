@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import Utils from './utils.js'
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 export default {
@@ -83,13 +84,17 @@ export default {
   created() {
     this.getActivityData();
   },
+
   methods: {
+
     async getActivityData() {
       const activity = await this.$axios.$get("/index/latest-activity");
       console.log(activity["data"]);
       if (activity["code"] != 0) return;
       this.activityList = activity["data"];
+       Utils.$emit('val', this.activityList)
     },
+   
   },
 };
 </script>
