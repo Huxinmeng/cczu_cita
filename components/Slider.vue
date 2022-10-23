@@ -27,7 +27,7 @@
                 <a v-else  data-animation="fadeInUp"
                   data-delay="1s"
                   class="main-btn"
-                  href="#">查看详情</a>
+                  :href=item.detail_page_url>查看详情</a>
               </div>
             </div>
           </div>
