@@ -3,7 +3,7 @@
     <Nav />
     <PageHeader title="Blog Details" />
     <BlogSingle />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 

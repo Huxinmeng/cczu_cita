@@ -8,7 +8,7 @@
               <div class="ac">
                 <h2 class="ac-q accordion__title-text" tabIndex="0">如何加入科协</h2>
                 <div class="ac-a accordion__content">
-                  <p class="accordion__content-desc">
+                  <p class="accordion__content-desc">加入QQ群：913497645||关注微信公众号：三氪情报局
                   </p>
                 </div>
               </div>
