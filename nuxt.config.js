@@ -56,7 +56,8 @@ export default {
     '@nuxtjs/axios'
   ],
   axios: {
-    baseURL: "http://124.221.228.222:9801"
+    baseURL: "http://124.221.228.222:9801",
+    // withCredentials: true
   },
   publicRuntimeConfig: {
     axios: {

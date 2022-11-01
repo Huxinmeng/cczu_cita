@@ -50,7 +50,7 @@
                 <textarea name="#" id="#" cols="30" rows="10" placeholder="请写出你的意见"></textarea>
               </div>
               <div class="input-box">
-                <button class="main-btn">提  交</button>
+                <button class="main-btn" @click="submit">提  交</button>
               </div>
             </form>
           </div>
@@ -65,8 +65,10 @@
       name: "FaqArea",
       mounted() {
         new Accordion('.accordion-container-one');
-      }
-
+      },
+   methods:{
+  submit(){this.$router.push('/about')}
+   }
     }
 </script>
 

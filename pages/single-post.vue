@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nav />
-    <PageHeader title="Blog Details" />
+    <PageHeader title="管理员登陆" />
     <BlogSingle />
     <Footer />
   </div>
