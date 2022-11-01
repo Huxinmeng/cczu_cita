@@ -37,7 +37,7 @@
                       type="submit"
                       class="main-btn"
                       onclick="return false"
-                      @click="login"
+                      @click="login(true)"
                     >
                       确 认 登 陆
                     </button>
@@ -70,22 +70,40 @@ export default {
       password: "",
     };
   },
-  mounted() {
-    /*页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录*/
+  created() {
+    this.login(false);
   },
   methods: {
-    async login() {
-      let formData = new FormData();
-      formData.append("username", this.username);
-      formData.append("password", this.password);
-      const response = await this.$axios
-        .post("/man/login", formData, { withCredentials: true })
-        .then((res) => {
-          if ((res.status = 200)) {
-            this.$router.push("/");
-            // console.log(res.headers);
-          }
-        });
+    async login(submit_flag) {
+      if (submit_flag) {
+        if (this.username == "" || this.password == "") {
+          alert("请输入用户名或密码");
+        } else {
+          let formData = new FormData();
+          formData.append("username", this.username);
+          formData.append("password", this.password);
+          console.log(getCookie("token"));
+          const response = await this.$axios
+            .post("/man/login", formData, { withCredentials: true })
+            .then((res) => {
+              if ((res.status = 200)) {
+                this.$router.push("/");
+                // console.log(res.headers);
+              } else {
+                alert("账号或者密码有误，请重新登录");
+              }
+            });
+        }
+      } else {
+        const response = await this.$axios
+          .post("/man/login", null, { withCredentials: true })
+          .then((res) => {
+            if ((res.status = 200)) {
+              this.$router.push("/");
+              // console.log(res.headers);
+            }
+          });
+      }
     },
   },
 };
