@@ -79,7 +79,7 @@ export default {
       formData.append("username", this.username);
       formData.append("password", this.password);
       this.$axios
-        .post("/man/login", formData, { withCredentials: true })
+        .post("/man/login", formData)
         .then((res) => {
           if ((res.status = 200)) {
             // this.$router.push("/");

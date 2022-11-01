@@ -146,7 +146,6 @@
                         <li>
                           <nuxt-link to="/single-post">管理员登录</nuxt-link>
                         </li>
-                       
                       </ul>
                     </li>
                   </ul>
@@ -281,8 +280,8 @@
                 <span
                   ><a href="co@mlfpc.onaliyun.com"
                     ><i class="fa fa-envelope-o"></i> co@mlfpc.onaliyun.com</a
-                  ></span
-                >
+                  >
+                </span>
               </div>
             </div>
           </div>
@@ -310,8 +309,8 @@ export default {
         resource: "",
         desc: "",
       },
-       bol: false,
-      str: '',
+      bol: false,
+      str: "",
       formLabelWidth: "120px",
     };
   },
@@ -335,7 +334,6 @@ export default {
       this.bol = false;
     },
   },
-
 };
 </script>
 
