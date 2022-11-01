@@ -87,7 +87,7 @@ export default {
             .post("/man/login", formData, { withCredentials: true })
             .then((res) => {
               if ((res.status = 200)) {
-                this.$router.push("/");
+                this.$router.push("/man-index");
                 // console.log(res.headers);
               } else {
                 alert("账号或者密码有误，请重新登录");
@@ -99,7 +99,7 @@ export default {
           .post("/man/login", null, { withCredentials: true })
           .then((res) => {
             if ((res.status = 200)) {
-              this.$router.push("/");
+              this.$router.push("/man-index");
               // console.log(res.headers);
             }
           });

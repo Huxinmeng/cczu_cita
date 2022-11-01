@@ -36,13 +36,18 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
+  css: ['element-ui/lib/theme-chalk/index.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
+    {
+      src: 'plugins/element-ui',
+      ssr: true, // 不支持 ssr 渲染的只会在客户端运行，不用给 true
+      // mode: 'server' // client v2.4+ 版本 用 mode: 'server' 代替了 ssr
+  }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -77,6 +82,7 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    }
+    },
+    transpile: [/^element-ui/] // 打包时不包含element-ui
   }
 }

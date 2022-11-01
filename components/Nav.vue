@@ -144,7 +144,7 @@
                       <ul class="sub-menu">
                         <li><nuxt-link to="/posts">关于我们</nuxt-link></li>
                         <li>
-                          <nuxt-link to="/single-post">管理员登录</nuxt-link>
+                          <nuxt-link to="/man-login">管理员登录</nuxt-link>
                         </li>
                       </ul>
                     </li>
