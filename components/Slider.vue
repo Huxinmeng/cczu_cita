@@ -11,23 +11,28 @@
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div class="banner-content text-center">
-                <span data-animation="fadeInDown" data-delay="1s"
-                  >{{item.second_title}}</span
-                >
+                <span data-animation="fadeInDown" data-delay="1s">{{
+                  item.second_title
+                }}</span>
                 <h3 data-animation="fadeInDown" data-delay=".1s" class="title">
-                  {{item.first_title}}
+                  {{ item.first_title }}
                 </h3>
                 <a
                   data-animation="fadeInUp"
                   data-delay="1s"
                   class="main-btn"
-                  href="#" v-if="item.detail_page_url==null"
+                  href="#"
+                  v-if="item.detail_page_url == null"
                   >发现更多</a
                 >
-                <a v-else  data-animation="fadeInUp"
+                <a
+                  v-else
+                  data-animation="fadeInUp"
                   data-delay="1s"
                   class="main-btn"
-                  :href=item.detail_page_url>查看详情</a>
+                  :href="item.detail_page_url"
+                  >查看详情</a
+                >
               </div>
             </div>
           </div>
@@ -61,7 +66,7 @@
 </template>
 
 <script>
-import Utils from './utils.js'
+import Utils from "./utils.js";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 export default {
@@ -86,15 +91,15 @@ export default {
   },
 
   methods: {
-
     async getActivityData() {
-      const activity = await this.$axios.$get("/index/latest-activity");
+      const activity = await this.$axios.$get("/index/latest-activity", {
+        withCredentials: true,
+      });
       console.log(activity["data"]);
       if (activity["code"] != 0) return;
       this.activityList = activity["data"];
-       Utils.$emit('val', this.activityList)
+      Utils.$emit("val", this.activityList);
     },
-   
   },
 };
 </script>

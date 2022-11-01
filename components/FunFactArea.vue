@@ -68,7 +68,7 @@
 
       },
         async awardData() {
-      const award = await this.$axios.$get("/index/get-award-count");
+      const award = await this.$axios.$get("/index/get-award-count",{ withCredentials: true });
       console.log(award["data"]);
       if (award["code"] != 0) return;
       this.awardata =award["data"];

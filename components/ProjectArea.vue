@@ -13,14 +13,15 @@
           <swiper-slide v-for="it in projectList" :key="it.id">
             <div class="project-item mt-30">
               <div class="project-thumb">
-                <img
-                  :src="it.project_img_url"
-                  alt="projects"
-                />
+                <img :src="it.project_img_url" alt="projects" />
               </div>
               <div class="project-content">
-                <a  v-if="it.project_url==''" href="#"><span>{{it.project_name}}</span></a>
-                 <a v-else :href="it.project_url" ><span>{{it.project_name}}</span></a>
+                <a v-if="it.project_url == ''" href="#"
+                  ><span>{{ it.project_name }}</span></a
+                >
+                <a v-else :href="it.project_url"
+                  ><span>{{ it.project_name }}</span></a
+                >
                 <p>recent project</p>
               </div>
             </div>
@@ -91,7 +92,7 @@ export default {
   },
   data() {
     return {
-      projectList:[],
+      projectList: [],
       swiperOptions: {
         slidesPerView: 3,
         loop: true,
@@ -129,7 +130,9 @@ export default {
   },
   methods: {
     async getProjectData() {
-      const project = await this.$axios.$get("/index/latest-project");
+      const project = await this.$axios.$get("/index/latest-project", {
+        withCredentials: true,
+      });
       // console.log(project["data"]);
       if (project["code"] != 0) return;
       this.projectList = project["data"];

@@ -57,7 +57,7 @@ export default {
   ],
   axios: {
     baseURL: "http://124.221.228.222:9801",
-    withCredentials: true
+    // withCredentials: true
   },
   publicRuntimeConfig: {
     axios: {

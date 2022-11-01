@@ -74,16 +74,16 @@ export default {
     /*页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录*/
   },
   methods: {
-    login() {
+    async login() {
       let formData = new FormData();
       formData.append("username", this.username);
       formData.append("password", this.password);
-      this.$axios
-        .post("/man/login", formData)
+      const response = await this.$axios
+        .post("/man/login", formData, { withCredentials: true })
         .then((res) => {
           if ((res.status = 200)) {
-            // this.$router.push("/");
-            console.log(res.headers);
+            this.$router.push("/");
+            // console.log(res.headers);
           }
         });
     },
