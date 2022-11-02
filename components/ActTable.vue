@@ -49,7 +49,7 @@
         <el-table-column
           prop="time"
           label="活动时间"
-
+          sortable
           :show-overflow-tooltip="true"
         >
         </el-table-column>
@@ -68,6 +68,7 @@
           prop="operation_time"
           label="操作时间"
           :show-overflow-tooltip="true"
+          sortable
         >
         </el-table-column>
         <el-table-column label="操作" width="130">

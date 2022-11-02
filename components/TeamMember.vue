@@ -16,7 +16,8 @@
             type="primary"
             @click="addDialogVisible = true"
             style="margin-left: 30px"
-            >添加用户</el-button
+          >添加用户
+          </el-button
           >
         </el-col>
         <el-col :span="3">
@@ -25,14 +26,14 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%" height="450">
-        <el-table-column prop="number" label="学号" width="180">
+        <el-table-column prop="number" label="学号" sortable>
         </el-table-column>
-        <el-table-column prop="name" label="姓名" width="180">
+        <el-table-column prop="name" label="姓名">
         </el-table-column>
-        <el-table-column prop="class" label="班级"> </el-table-column>
-        <el-table-column prop="depart" label="部门"> </el-table-column>
-        <el-table-column prop="position" label="职务"> </el-table-column>
-        <el-table-column prop="year" label="年份"> </el-table-column>
+        <el-table-column prop="class" label="班级" sortable></el-table-column>
+        <el-table-column prop="depart" label="部门" sortable></el-table-column>
+        <el-table-column prop="position" label="职务"></el-table-column>
+        <el-table-column prop="year" label="年份" sortable></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button
@@ -227,7 +228,7 @@ export default {
       },
       addFromRules: {
         username: [
-          { required: true, message: "请输入用户名称", trigger: "blur" },
+          {required: true, message: "请输入用户名称", trigger: "blur"},
           {
             min: 5,
             max: 12,
@@ -236,7 +237,7 @@ export default {
           },
         ],
         password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
+          {required: true, message: "请输入密码", trigger: "blur"},
           {
             min: 6,
             max: 10,
@@ -245,7 +246,7 @@ export default {
           },
         ],
         email: [
-          { required: true, message: "请输入邮箱", trigger: "blur" },
+          {required: true, message: "请输入邮箱", trigger: "blur"},
           {
             min: 6,
             max: 15,
@@ -261,7 +262,7 @@ export default {
       },
       editFromRules: {
         password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
+          {required: true, message: "请输入密码", trigger: "blur"},
           {
             min: 6,
             max: 10,
@@ -270,7 +271,7 @@ export default {
           },
         ],
         email: [
-          { required: true, message: "请输入邮箱", trigger: "blur" },
+          {required: true, message: "请输入邮箱", trigger: "blur"},
           {
             min: 6,
             max: 15,
@@ -283,7 +284,7 @@ export default {
   },
   methods: {
     async getUserList() {
-      const { data: res } = await this.$axios.get("alluser", {
+      const {data: res} = await this.$axios.get("alluser", {
         params: this.queryInfo,
       });
       this.userList = res.data;
@@ -301,7 +302,7 @@ export default {
     addUser() {
       this.$refs.addFormRef.validate(async (valid) => {
         if (!valid) return;
-        const { data: res } = await this.$http.post("adduser", this.addForm);
+        const {data: res} = await this.$http.post("adduser", this.addForm);
         if (res != "success") {
           return this.$message.error("操作失败");
         }
@@ -323,7 +324,7 @@ export default {
       if (confirmResult != "confirm") {
         return this.$message.info("已取消删除");
       }
-      const { data: res } = await this.$http.delete("deleteUser?id=" + id);
+      const {data: res} = await this.$http.delete("deleteUser?id=" + id);
       if (res != "success") {
         return this.$message.error("操作失败");
       }
@@ -340,7 +341,7 @@ export default {
     editUser() {
       this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return;
-        const { data: res } = await this.$http.post("edituser", this.editForm);
+        const {data: res} = await this.$http.post("edituser", this.editForm);
         if (res != "success") {
           return this.$message.error("操作失败");
         }

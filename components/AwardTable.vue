@@ -27,6 +27,7 @@
           prop="player_name"
           label="获奖人员"
           :show-overflow-tooltip="true"
+          sortable
         >
         </el-table-column>
         <el-table-column
@@ -39,18 +40,20 @@
           prop="type"
           label="奖项类型"
           :show-overflow-tooltip="true"
+          sortable
         >
         </el-table-column>
         <el-table-column
           prop="level"
           label="奖项级别"
           :show-overflow-tooltip="true"
+          sortable
         >
         </el-table-column>
         <el-table-column
           prop="game_time"
           label="比赛时间"
-
+          sortable
           :show-overflow-tooltip="true"
         >
         </el-table-column>
@@ -68,6 +71,7 @@
           prop="operation_time"
           label="操作时间"
           :show-overflow-tooltip="true"
+          sortable
         >
         </el-table-column>
         <el-table-column label="操作" width="130">
