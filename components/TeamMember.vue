@@ -3,7 +3,7 @@
     <el-card>
       <el-row>
         <el-col :span="10">
-          <el-input placeholder="请输入搜索内容" v-model="queryInfo.query">
+          <el-input placeholder="请输入搜索内容" v-model="queryInfo.query" clearable>
             <el-button
               slot="append"
               icon="el-icon-search"
@@ -113,7 +113,6 @@
       </div>
     </el-dialog>
     <el-pagination
-      @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page.sync="currentPage1"
       :page-size="100"

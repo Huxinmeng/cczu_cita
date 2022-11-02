@@ -3,8 +3,8 @@
     <el-card>
       <el-row>
         <el-col :span="10">
-          <el-input placeholder="请输入搜索内容">
-            <el-button slot="append" icon="el-icon-search"></el-button>
+          <el-input placeholder="请输入搜索内容" v-model="searchWord" clearable @clear="getActivityList(1)">
+            <el-button slot="append" icon="el-icon-search" @click="searchByWord(1)"></el-button>
           </el-input>
         </el-col>
         <el-col :span="4">
@@ -152,7 +152,7 @@
     </el-dialog>
     <el-pagination
       @current-change="handleCurrentChange"
-      :current-page.sync="currentPage1"
+      :current-page.sync="currentPage"
       :page-size="10"
       layout="total, prev, pager, next"
       :total="total_count"
@@ -185,7 +185,7 @@ export default {
       total_count: 1,
       userList: [],
       total: 0,
-      currentPage1: 1,
+      currentPage: 1,
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
@@ -247,6 +247,7 @@ export default {
           },
         ],
       },
+      searchWord: ''
     };
   },
   created() {
@@ -254,25 +255,44 @@ export default {
   },
   methods: {
     handleCurrentChange(newPage) {
-      this.currentPage1 = newPage;
+      this.currentPage = newPage;
       // console.log(this.currentPage1)
-      this.getActivityList(this.currentPage1);
+      this.getActivityList(this.currentPage);
     },
     async getActivityList(page) {
-      const activity = await this.$axios.$get(
-        "/man/list/activity?page=" + page,
+      if (this.searchWord != '') {
+        const activity = await this.$axios.$get(
+          "/man/list/activity?page=" + page,
+          {
+            withCredentials: true,
+          }
+        ).catch((err) => {
+          if (err.response.status == 401 || err.response.status == 422) {
+            alert("验证过期，请重新登录");
+            this.$router.push("/man-login");
+          }
+        });
+        if (activity["code"] != 0) return;
+        this.tableData = activity["data"];
+        this.total_count = activity["total_count"];
+      } else {
+        await this.searchByWord(page)
+      }
+    },
+    async searchByWord(page) {
+      const activity = await this.$axios.$get(`/man/search/activity?page=${page}&query=${this.searchWord}`,
         {
           withCredentials: true,
+        }).catch((err) => {
+        if (err.response.status == 401 || err.response.status == 422) {
+          alert("验证过期，请重新登录");
+          this.$router.push("/man-login");
         }
-      ).catch((err) => {
-        alert("验证过期，请重新登录");
-        this.$router.push("/man-login");
       });
       if (activity["code"] != 0) return;
       this.tableData = activity["data"];
       this.total_count = activity["total_count"];
     },
-
     addDialogClosed() {
       this.$refs.addFormRef.resetFields();
     },
