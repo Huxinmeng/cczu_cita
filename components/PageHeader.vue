@@ -1,5 +1,5 @@
 <template>
-  <div class="page-title-area bg_cover pt-120" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/page-bg.jpg);">
+  <div class="page-title-area bg_cover pt-120" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/school_2.jpg);">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">

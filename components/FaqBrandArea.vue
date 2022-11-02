@@ -1,5 +1,5 @@
 <template>
-  <div class="faq-brand-area bg_cover" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/faq-bg.jpg);">
+  <div class="faq-brand-area bg_cover" style="background-image: url(https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/school_1.jpg);">
     <div class="container">
       <div class="row brand-active">
         <swiper :options="swiperOptions">
