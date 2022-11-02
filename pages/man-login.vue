@@ -11,7 +11,7 @@
 import Nav from "../components/Nav";
 import FooterTwo from "../components/FooterTwo";
 import PageHeader from "../components/PageHeader";
-import BlogSingle from "../components/BlogSingle";
+import BlogSingle from "../components/ManageLogin";
 export default {
   components: {
     BlogSingle,
@@ -28,7 +28,7 @@ export default {
     };
   },
   methods: {
-    
+
   },
 };
 </script>

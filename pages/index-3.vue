@@ -55,7 +55,7 @@
     },
     head(){
       return {
-        title: "Indutri | Home 3"
+        title: "科创协会 - C.A.Science and Technology Innovation Association | Home 3"
       }
     }
   }

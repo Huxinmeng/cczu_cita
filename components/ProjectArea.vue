@@ -26,50 +26,6 @@
               </div>
             </div>
           </swiper-slide>
-          <!-- <swiper-slide>
-          <div class="project-item mt-30">
-            <div class="project-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/car.png" alt="projects">
-            </div>
-            <div class="project-content">
-              <a href="#"><span>汽车推荐系统</span></a>
-              <p>recent project</p>
-            </div>
-          </div>
-          </swiper-slide>
-          <swiper-slide>
-          <div class="project-item mt-30">
-            <div class="project-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/stock.png" alt="projects">
-            </div>
-            <div class="project-content">
-              <a href="#"><span>股票K线</span></a>
-              <p>recent project</p>
-            </div>
-          </div>
-          </swiper-slide>
-          <swiper-slide>
-          <div class="project-item mt-30">
-            <div class="project-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/visual.png" alt="projects">
-            </div>
-            <div class="project-content">
-              <a href="#"><span>招投标行业可视化</span></a>
-              <p>recent project</p>
-            </div>
-          </div>
-          </swiper-slide>
-          <swiper-slide>
-          <div class="project-item mt-30">
-            <div class="project-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/tianqin.png" alt="projects">
-            </div>
-            <div class="project-content">
-              <a href="#"><span>天琴工作室</span></a>
-              <p>recent project</p>
-            </div>
-          </div>
-          </swiper-slide> -->
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>

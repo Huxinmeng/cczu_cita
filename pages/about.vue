@@ -40,7 +40,7 @@
     },
     head(){
       return {
-        title: "Indutri | About Us"
+        title: "科创协会 - C.A.Science and Technology Innovation Association | About Us"
       }
     }
   }

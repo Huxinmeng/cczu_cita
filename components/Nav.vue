@@ -292,7 +292,6 @@
 </template>
 
 <script>
-import Alt from "./alt.vue";
 export default {
   name: "Nav",
   data() {
@@ -314,9 +313,6 @@ export default {
       formLabelWidth: "120px",
     };
   },
-  components: {
-    Alt,
-  },
   methods: {
     show() {
       this.bol = true;
@@ -325,7 +321,7 @@ export default {
     getData(data) {
       // 关闭弹出层
       this.bol = false;
-      console.log(data);
+      // console.log(data);
       this.str = data;
     },
     // 关闭弹窗

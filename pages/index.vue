@@ -3,15 +3,15 @@
     <Nav />
     <Slider />
     <ServiceArea />
-  
-    
+
+
 
     <ClientArea />
     <FunFactArea />
     <ProjectArea />
     <FaqBrandArea />
     <FaqArea />
-  
+
     <Footer />
   </div>
 </template>
@@ -25,7 +25,7 @@
   import VideoArea from "../components/VideoArea";
   import BuildingArea from "../components/BuildingArea";
   import BrandArea from "../components/BrandArea";
-  import ClientArea from "../components/ClientArea";
+  import ClientArea from "../components/TeacherArea";
   import FunFactArea from "../components/FunFactArea";
   import ProjectArea from "../components/ProjectArea";
   import FaqBrandArea from "../components/FaqBrandArea";
@@ -52,6 +52,6 @@
       Nav
 
     },
- 
+
   }
 </script>

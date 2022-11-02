@@ -38,29 +38,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="banner-area slide-bg2 bg_cover d-flex align-items-center">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="banner-content text-center">
-                <span data-animation="fadeInDown" data-delay="1s"
-                  >欢迎来到科技创新协会</span
-                >
-                <h3 data-animation="fadeInDown" data-delay=".1s" class="title">
-                  线下笔试
-                </h3>
-                <a
-                  data-animation="fadeInUp"
-                  data-delay="1s"
-                  class="main-btn"
-                  href="#"
-                  >发现更多</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </VueSlickCarousel>
   </section>
 </template>
@@ -95,7 +72,7 @@ export default {
       const activity = await this.$axios.$get("/index/latest-activity", {
         withCredentials: true,
       });
-      console.log(activity["data"]);
+      // console.log(activity["data"]);
       if (activity["code"] != 0) return;
       this.activityList = activity["data"];
       Utils.$emit("val", this.activityList);

@@ -109,22 +109,11 @@
                     </div>
                     <div class="news-item-content">
                       <span>{{it.time.split('T')[0]}}</span>
-                      <a 
+                      <a
                         >{{it.first_title}}</a
                       >
                     </div>
                   </div>
-                  <!-- <div class="news-item d-flex align-items-center  mt-20">
-                    <div class="news-item-thumb">
-                      <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/footer-news-2.jpg" alt="" />
-                    </div>
-                    <div class="news-item-content">
-                      <span>2022/9/30</span>
-                      <a href="#"
-                        >线下面试</a
-                      >
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -179,11 +168,11 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-    
+
       var vm = this
       // 用$on事件来接收参数
       Utils.$on('val', (data) => {
-        console.log(data)
+        // console.log(data)
         vm.activityList = data
       })
 
@@ -207,16 +196,6 @@ export default {
     scrollTop() {
       window.scrollTo(0, 0);
     },
-    //   async getActivityData() {
-    //   const activity = await this.$axios.$get("/index/latest-activity");
-    //   console.log(activity["data"]);
-    //   if (activity["code"] != 0) return;
-    //   this.activityList = activity["data"];
-    // },
-    // async asyncData() {
-    //   const ip = await this.$axios.$get("/index/list-teacher");
-    //   console.log(ip);
-    // },
   },
 };
 </script>

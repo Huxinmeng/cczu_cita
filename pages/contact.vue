@@ -25,7 +25,7 @@
     },
     head(){
       return {
-        title: "Indutri | Contact Us"
+        title: "科创协会 - C.A.Science and Technology Innovation Association | Contact Us"
       }
     }
   }

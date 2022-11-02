@@ -20,18 +20,6 @@
               <span>总奖项</span>
             </div>
           </div>
-          <!-- <div class="col-lg-3 col-md-6">
-            <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="200ms">
-              <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 6 : 0' :duration='3000'></countTo></h3>
-              <span>校级奖项</span>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="fun-facts-item text-center mt-30 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-              <h3 class="title odometer"><countTo :startVal='0' :endVal='startCounter ? 38 : 0' :duration='3000'></countTo></h3>
-              <span>总奖项</span>
-            </div>
-          </div>  -->
         </div>
         <div class="shape">
           <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/shape-17.png" alt="shape">
@@ -69,10 +57,10 @@
       },
         async awardData() {
       const award = await this.$axios.$get("/index/get-award-count",{ withCredentials: true });
-      console.log(award["data"]);
+      // console.log(award["data"]);
       if (award["code"] != 0) return;
       this.awardata =award["data"];
-     
+
         this.alldata=award["data"][0]['count']+award["data"][1]['count']+award["data"][2]['count']
     },
     }

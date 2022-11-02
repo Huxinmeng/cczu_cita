@@ -82,7 +82,7 @@ export default {
           let formData = new FormData();
           formData.append("username", this.username);
           formData.append("password", this.password);
-          console.log(getCookie("token"));
+          // console.log(getCookie("token"));
           const response = await this.$axios
             .post("/man/login", formData, { withCredentials: true })
             .then((res) => {

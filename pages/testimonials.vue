@@ -25,7 +25,7 @@
     },
     head(){
       return {
-        title: "Indutri | Testimonials"
+        title: "科创协会 - C.A.Science and Technology Innovation Association | Testimonials"
       }
     }
   }
