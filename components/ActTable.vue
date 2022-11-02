@@ -354,9 +354,10 @@ export default {
             alert("验证过期，请重新登录")
             this.$router.push("/man-login");
           } else {
-            alert("添加失败")
+            this.$message.error("操作失败");
           }
         });
+        console.log(res)
         if (res['code'] != 0) {
           return this.$message.error("操作失败");
         }
