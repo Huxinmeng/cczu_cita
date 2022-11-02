@@ -273,7 +273,10 @@ export default {
         {
           withCredentials: true,
         }
-      );
+      ).catch((err) => {
+        alert("验证过期，请重新登录");
+        this.$router.push("/man-login");
+      });
       if (award["code"] != 0) return;
       this.tableData = award["data"];
       this.total_count = award["total_count"];

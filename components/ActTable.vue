@@ -12,7 +12,8 @@
             type="primary"
             @click="addDialogVisible = true"
             style="margin-left: 30px"
-            >添加活动</el-button
+          >添加活动
+          </el-button
           >
         </el-col>
         <el-col :span="3">
@@ -21,7 +22,7 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="id" label="活动id" width="60"> </el-table-column>
+        <el-table-column prop="id" label="活动id" width="60"></el-table-column>
         <el-table-column
           prop="first_title"
           label="第一标题"
@@ -194,7 +195,7 @@ export default {
       },
       addFromRules: {
         username: [
-          { required: true, message: "请输入用户名称", trigger: "blur" },
+          {required: true, message: "请输入用户名称", trigger: "blur"},
           {
             min: 5,
             max: 12,
@@ -203,7 +204,7 @@ export default {
           },
         ],
         password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
+          {required: true, message: "请输入密码", trigger: "blur"},
           {
             min: 6,
             max: 10,
@@ -212,7 +213,7 @@ export default {
           },
         ],
         email: [
-          { required: true, message: "请输入邮箱", trigger: "blur" },
+          {required: true, message: "请输入邮箱", trigger: "blur"},
           {
             min: 6,
             max: 15,
@@ -228,7 +229,7 @@ export default {
       },
       editFromRules: {
         password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
+          {required: true, message: "请输入密码", trigger: "blur"},
           {
             min: 6,
             max: 10,
@@ -237,7 +238,7 @@ export default {
           },
         ],
         email: [
-          { required: true, message: "请输入邮箱", trigger: "blur" },
+          {required: true, message: "请输入邮箱", trigger: "blur"},
           {
             min: 6,
             max: 15,
@@ -263,7 +264,10 @@ export default {
         {
           withCredentials: true,
         }
-      );
+      ).catch((err) => {
+        alert("验证过期，请重新登录");
+        this.$router.push("/man-login");
+      });
       if (activity["code"] != 0) return;
       this.tableData = activity["data"];
       this.total_count = activity["total_count"];
@@ -275,7 +279,7 @@ export default {
     addUser() {
       this.$refs.addFormRef.validate(async (valid) => {
         if (!valid) return;
-        const { data: res } = await this.$http.post("adduser", this.addForm);
+        const {data: res} = await this.$http.post("adduser", this.addForm);
         if (res != "success") {
           return this.$message.error("操作失败");
         }
@@ -296,7 +300,7 @@ export default {
       if (confirmResult != "confirm") {
         return this.$message.info("已取消删除");
       }
-      const { data: res } = await this.$http.delete("deleteUser?id=" + id);
+      const {data: res} = await this.$http.delete("deleteUser?id=" + id);
       if (res != "success") {
         return this.$message.error("操作失败");
       }
@@ -311,7 +315,7 @@ export default {
     editUser() {
       this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return;
-        const { data: res } = await this.$http.post("edituser", this.editForm);
+        const {data: res} = await this.$http.post("edituser", this.editForm);
         if (res != "success") {
           return this.$message.error("操作失败");
         }
