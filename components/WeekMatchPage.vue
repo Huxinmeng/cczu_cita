@@ -2,119 +2,16 @@
   <div class="news-area news-posts-area pt-120">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-9">
+        <div class="col-lg-4 col-md-6 col-sm-9" v-for="item in matchList" :key="item.id">
           <div class="news-item mt-30">
             <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-1.png" alt="news">
+              <img :src="item.img_url" alt="news">
             </div>
             <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
+              <a v-if="item.detail_page_url == null" href="#">{{ item.first_title }}</a>
               <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-2.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-3.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-4.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-5.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-6.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-7.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-8.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-9">
-          <div class="news-item mt-30">
-            <div class="news-thumb">
-              <img src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/news-9.png" alt="news">
-            </div>
-            <div class="news-content text-center">
-              <nuxt-link to="/single-post">We Believe in Building Long Lasting our Business Relationships</nuxt-link>
-              <div class="date">
-                <span><span>06 April, 2020</span><span class="pl-10 pr-10">   -</span>    2 Comments</span>
+                <span><span>{{ item.time.split('T')[0] }}</span><span
+                  class="pl-10 pr-10">   -    </span>{{ item.second_title }}</span>
               </div>
             </div>
           </div>
@@ -125,9 +22,30 @@
 </template>
 
 <script>
-    export default {
-        name: "WeekMatchPage"
+export default {
+  name: "WeekMatchPage",
+  data() {
+    return {
+      matchList: [{
+        "time": "2022-10-15T00:00:00",
+        "first_title": "测试",
+        "detail_page_url": null,
+        "second_title": "测试",
+        "img_url": "https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/activity_4.jpg",
+        "detail_page_id": 4,
+      }]
     }
+  }, created() {
+    this.getWeekMatchData()
+  },
+  methods: {
+    async getWeekMatchData() {
+      const match = await this.$axios.$get('/index/get-week-match')
+      if (match['code'] != 0) return;
+      this.matchList = match['data']
+    }
+  }
+}
 </script>
 
 <style scoped>

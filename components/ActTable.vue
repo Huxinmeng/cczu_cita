@@ -63,6 +63,13 @@
           :show-overflow-tooltip="true"
         >
         </el-table-column>
+        <el-table-column
+          prop="type"
+          label="活动类型"
+          :formatter="formatType"
+          :show-overflow-tooltip="true"
+        >
+        </el-table-column>
         <el-table-column prop="operation_user" label="操作id" width="80">
         </el-table-column>
         <el-table-column
@@ -254,6 +261,20 @@ export default {
     this.getActivityList(1);
   },
   methods: {
+    formatType: function (row, column, cellValue) {
+      var ret = null
+      switch (cellValue) {
+        case 0:
+          ret = '普通活动'
+          return ret
+        case 1:
+          ret = '竞赛活动'
+          return ret
+        default:
+          ret = '普通活动'
+          return ret
+      }
+    },
     handleCurrentChange(newPage) {
       this.currentPage = newPage;
       // console.log(this.currentPage1)
