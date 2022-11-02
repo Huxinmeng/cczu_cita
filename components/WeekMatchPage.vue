@@ -126,7 +126,7 @@
 
 <script>
     export default {
-        name: "BlogPage"
+        name: "WeekMatchPage"
     }
 </script>
 

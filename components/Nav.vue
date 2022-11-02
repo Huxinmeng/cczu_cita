@@ -14,9 +14,9 @@
             >
               <div class="logo">
                 <a href="/"
-                  ><img
-                    src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png"
-                    alt=""
+                ><img
+                  src="https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/logo.png"
+                  alt=""
                 /></a>
               </div>
               <div class="header-top-info d-none d-md-block">
@@ -68,19 +68,27 @@
                 <div class="header-menu d-none d-lg-block">
                   <ul>
                     <li></li>
-                    <li class="active"><nuxt-link to="/">首页</nuxt-link></li>
+                    <li class="active">
+                      <nuxt-link to="/">首页</nuxt-link>
+                    </li>
 
                     <li>
                       <a href="#">新闻</a>
                       <ul class="sub-menu">
-                        <li><nuxt-link to="/about">科协新闻</nuxt-link></li>
-                        <li><nuxt-link to="/our-team">通知公示</nuxt-link></li>
+                        <li>
+                          <nuxt-link to="/about">科协新闻</nuxt-link>
+                        </li>
+                        <li>
+                          <nuxt-link to="/our-team">通知公示</nuxt-link>
+                        </li>
                       </ul>
                     </li>
                     <li>
                       <a href="#">学术</a>
                       <ul class="sub-menu">
-                        <li><nuxt-link to="/services">科技前沿</nuxt-link></li>
+                        <li>
+                          <nuxt-link to="/services">科技前沿</nuxt-link>
+                        </li>
                         <li>
                           <nuxt-link to="/single-service">学习路线</nuxt-link>
                         </li>
@@ -94,17 +102,20 @@
                         </li>
                         <li>
                           <nuxt-link to="/single-project"
-                            >专业技能竞赛</nuxt-link
+                          >专业技能竞赛
+                          </nuxt-link
                           >
                         </li>
                         <li>
                           <nuxt-link to="/single-project"
-                            >综合能力竞赛</nuxt-link
+                          >综合能力竞赛
+                          </nuxt-link
                           >
                         </li>
                         <li>
-                          <nuxt-link to="/single-project"
-                            >CTIA科协周赛</nuxt-link
+                          <nuxt-link to="/week-match"
+                          >CTIA科协周赛
+                          </nuxt-link
                           >
                         </li>
                       </ul>
@@ -112,7 +123,9 @@
                     <li>
                       <a href="#">风采</a>
                       <ul class="sub-menu">
-                        <li><nuxt-link to="/posts">比赛荣誉</nuxt-link></li>
+                        <li>
+                          <nuxt-link to="/posts">比赛荣誉</nuxt-link>
+                        </li>
                         <li>
                           <nuxt-link to="/single-post">团队风采</nuxt-link>
                         </li>
@@ -121,7 +134,9 @@
                     <li>
                       <a href="#">CTIA</a>
                       <ul class="sub-menu">
-                        <li><nuxt-link to="/posts">综管系统</nuxt-link></li>
+                        <li>
+                          <nuxt-link to="/posts">综管系统</nuxt-link>
+                        </li>
                         <li>
                           <nuxt-link to="/single-post">CTIA服务</nuxt-link>
                         </li>
@@ -133,7 +148,9 @@
                     <li>
                       <a href="#">三氪情报局</a>
                       <ul class="sub-menu">
-                        <li><nuxt-link to="/posts">三氪有料</nuxt-link></li>
+                        <li>
+                          <nuxt-link to="/posts">三氪有料</nuxt-link>
+                        </li>
                         <li>
                           <nuxt-link to="/single-post">成为供稿人</nuxt-link>
                         </li>
@@ -142,7 +159,9 @@
                     <li>
                       <a href="#">关于</a>
                       <ul class="sub-menu">
-                        <li><nuxt-link to="/posts">关于我们</nuxt-link></li>
+                        <li>
+                          <nuxt-link to="/posts">关于我们</nuxt-link>
+                        </li>
                         <li>
                           <nuxt-link to="/man-login">管理员登录</nuxt-link>
                         </li>
@@ -160,7 +179,7 @@
                 <a
                   @click="mobileToggle = !mobileToggle"
                   href="javascript:void(0)"
-                  ><i class="fa fa-times"></i
+                ><i class="fa fa-times"></i
                 ></a>
               </div>
               <div class="header-social">
@@ -183,25 +202,33 @@
                 <ul class="offcanvas_main_menu">
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"></span>
-                    <div><nuxt-link to="/">首页</nuxt-link></div>
+                    <div>
+                      <nuxt-link to="/">首页</nuxt-link>
+                    </div>
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">新闻</a>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/about">科协新闻</nuxt-link></li>
-                      <li><nuxt-link to="/our-team">通知公示</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/about">科协新闻</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/our-team">通知公示</nuxt-link>
+                      </li>
                     </ul>
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">学术</a>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/services">科技前沿</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/services">科技前沿</nuxt-link>
+                      </li>
                       <li>
                         <nuxt-link to="/single-service">学习路线</nuxt-link>
                       </li>
@@ -209,7 +236,7 @@
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">竞赛</a>
                     <ul class="sub-menu">
@@ -229,22 +256,30 @@
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">风采</a>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/posts">比赛荣誉</nuxt-link></li>
-                      <li><nuxt-link to="/single-post">团队风采</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/posts">比赛荣誉</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/single-post">团队风采</nuxt-link>
+                      </li>
                     </ul>
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">CTIA</a>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/posts">综管系统</nuxt-link></li>
-                      <li><nuxt-link to="/single-post">CTIA服务</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/posts">综管系统</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/single-post">CTIA服务</nuxt-link>
+                      </li>
                       <li>
                         <nuxt-link to="/single-post">加入CTIA科协</nuxt-link>
                       </li>
@@ -252,11 +287,13 @@
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">三氪情报局</a>
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/posts">三氪有料</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/posts">三氪有料</nuxt-link>
+                      </li>
                       <li>
                         <nuxt-link to="/single-post">成为供稿人</nuxt-link>
                       </li>
@@ -264,23 +301,29 @@
                   </li>
                   <li class="menu-item-has-children active">
                     <span class="menu-expand"
-                      ><i class="fa fa-angle-down"></i
+                    ><i class="fa fa-angle-down"></i
                     ></span>
                     <a href="#">关于</a>
 
                     <ul class="sub-menu">
-                      <li><nuxt-link to="/posts">关于我们</nuxt-link></li>
-                      <li><nuxt-link to="/single-post">联系我们</nuxt-link></li>
-                      <li><nuxt-link to="">加入CITA</nuxt-link></li>
+                      <li>
+                        <nuxt-link to="/posts">关于我们</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/single-post">联系我们</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="">加入CITA</nuxt-link>
+                      </li>
                     </ul>
                   </li>
                 </ul>
               </div>
               <div class="offcanvas_footer">
                 <span
-                  ><a href="co@mlfpc.onaliyun.com"
-                    ><i class="fa fa-envelope-o"></i> co@mlfpc.onaliyun.com</a
-                  >
+                ><a href="co@mlfpc.onaliyun.com"
+                ><i class="fa fa-envelope-o"></i> co@mlfpc.onaliyun.com</a
+                >
                 </span>
               </div>
             </div>

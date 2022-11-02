@@ -1,7 +1,7 @@
 <template>
   <div>
     <Nav />
-    <PageHeader title="Blog Posts" />
+    <PageHeader title="科协 周赛" />
     <WeekMatchPage />
     <Footer />
   </div>
@@ -22,7 +22,7 @@
     },
     head(){
       return {
-        title: "科创协会 - C.A.Science and Technology Innovation Association | Blog Posts"
+        title: "科创协会 - C.A.Science and Technology Innovation Association | 科协 周赛"
       }
     }
   }
