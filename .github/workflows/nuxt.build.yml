@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
 
     # 下载源码
@@ -47,3 +47,18 @@ jobs:
         asset_path: ./release.tgz
         asset_name: release.tgz
         asset_content_type: application/x-tgz
+
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          cd /opt/software/cita
+          wget http://f.941103.xyz:8123/https://github.com/Huxinmeng/cczu_cita/releases/latest/download/release.tgz -O release.tgz
+          rm -rf release.tar
+          gunzip release.tgz
+          tar -xvf release.tar
+          npm install --production
+          pm2 reload cita_web
