@@ -49,7 +49,7 @@
         <el-table-column
           prop="time"
           label="活动时间"
-         
+
           :show-overflow-tooltip="true"
         >
         </el-table-column>
@@ -58,7 +58,7 @@
         <el-table-column
           prop="detail_page_url"
           label="活动详情url"
-          
+
           :show-overflow-tooltip="true"
         >
         </el-table-column>
@@ -161,7 +161,7 @@
 
 <script>
 export default {
-  name: "TeamMember",
+  name: "ActTable",
   data() {
     return {
       tableData: [

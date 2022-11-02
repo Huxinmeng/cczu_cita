@@ -12,7 +12,7 @@
             type="primary"
             @click="addDialogVisible = true"
             style="margin-left: 30px"
-          >添加项目动
+          >添加导师信息
           </el-button
           >
         </el-col>
@@ -22,45 +22,32 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="id" label="项目id" width="60"></el-table-column>
+        <el-table-column prop="id" label="id" width="60"></el-table-column>
         <el-table-column
-          prop="project_name"
-          label="项目名称"
+          prop="name"
+          label="姓名"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="project_description"
-          label="项目描述"
+          prop="position"
+          label="职称"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="project_img_url"
-          label="项目图片"
+          prop="description"
+          label="描述"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="participant"
-          label="参与人员"
+          prop="img_url"
+          label="个人照片"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
-        <el-table-column
-          prop="time"
-          label="项目时间"
 
-          :show-overflow-tooltip="true"
-        >
-        </el-table-column>
-        <el-table-column
-          prop="project_url"
-          label="项目部署url"
-
-          :show-overflow-tooltip="true"
-        >
-        </el-table-column>
         <el-table-column prop="operation_user" label="操作id" width="80">
         </el-table-column>
         <el-table-column
@@ -160,20 +147,18 @@
 
 <script>
 export default {
-  name: "ProjectTable",
+  name: "TeacherTable",
   data() {
     return {
       tableData: [
         {
-          "project_url": "",
+          "name": "孙威",
+          "img_url": "https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/sun_resize.jpg",
+          "operation_time": "2022-10-16T18:45:36",
+          "operation_user": 1,
+          "position": "阿里云大数据讲师、慧科集团高级讲师、互联网高级架构师",
           "id": 1,
-          "project_name": "天琴工作室",
-          "participant": "",
-          "operation_time": "2022-10-18T16:11:14",
-          "project_description": "",
-          "project_img_url": "https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/tianqin.png",
-          "time": "2022-10-18T16:11:14",
-          "operation_user": 1
+          "description": "掌握云原生开发、微服务架构设计、推荐系统工程实现。多年互联网公司就业经历，能够组织规划中大型分布式项目开发交付。有丰富的大数据和云计算等前沿技术的教学实施经验。"
         },
       ],
       total_count: 1,
@@ -244,24 +229,24 @@ export default {
     };
   },
   created() {
-    this.getProjectList(1);
+    this.getTeacherList(1);
   },
   methods: {
     handleCurrentChange(newPage) {
       this.currentPage1 = newPage;
       // console.log(this.currentPage1)
-      this.getProjectList(this.currentPage1);
+      this.getTeacherList(this.currentPage1);
     },
-    async getProjectList(page) {
-      const project = await this.$axios.$get(
-        "/man/list/project?page=" + page,
+    async getTeacherList(page) {
+      const teacherList = await this.$axios.$get(
+        "/man/list/teacher?page=" + page,
         {
           withCredentials: true,
         }
       );
-      if (project["code"] != 0) return;
-      this.tableData = project["data"];
-      this.total_count = project["total_count"];
+      if (teacherList["code"] != 0) return;
+      this.tableData = teacherList["data"];
+      this.total_count = teacherList["total_count"];
     },
 
     addDialogClosed() {

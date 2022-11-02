@@ -12,7 +12,7 @@
             type="primary"
             @click="addDialogVisible = true"
             style="margin-left: 30px"
-          >添加项目动
+          >添加奖项
           </el-button
           >
         </el-col>
@@ -22,42 +22,43 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="id" label="项目id" width="60"></el-table-column>
+        <el-table-column prop="id" label="id" width="60"></el-table-column>
         <el-table-column
-          prop="project_name"
-          label="项目名称"
+          prop="player_name"
+          label="获奖人员"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="project_description"
-          label="项目描述"
+          prop="game_name"
+          label="比赛全名"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="project_img_url"
-          label="项目图片"
+          prop="type"
+          label="奖项类型"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="participant"
-          label="参与人员"
+          prop="level"
+          label="奖项级别"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
         <el-table-column
-          prop="time"
-          label="项目时间"
+          prop="game_time"
+          label="比赛时间"
 
           :show-overflow-tooltip="true"
         >
         </el-table-column>
+        <el-table-column prop="if_proved" label="是否有证明材料" :formatter="formatBoolean">
+        </el-table-column>
         <el-table-column
-          prop="project_url"
-          label="项目部署url"
-
+          prop="proved_img_or_url"
+          label="证明材料url"
           :show-overflow-tooltip="true"
         >
         </el-table-column>
@@ -160,20 +161,21 @@
 
 <script>
 export default {
-  name: "ProjectTable",
+  name: "AwardTable",
   data() {
     return {
       tableData: [
         {
-          "project_url": "",
+          "game_name": "第七届中国国际“互联网+”创新创业大赛",
+          "player_name": "黄文凯",
+          "operation_time": "2022-11-02T14:16:28",
+          "level": "一等奖",
+          "proved_img_or_url": null,
+          "operation_user": 1,
           "id": 1,
-          "project_name": "天琴工作室",
-          "participant": "",
-          "operation_time": "2022-10-18T16:11:14",
-          "project_description": "",
-          "project_img_url": "https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/tianqin.png",
-          "time": "2022-10-18T16:11:14",
-          "operation_user": 1
+          "game_time": "2021-07-01T00:00:00",
+          "type": "校级",
+          "if_proved": true
         },
       ],
       total_count: 1,
@@ -244,24 +246,33 @@ export default {
     };
   },
   created() {
-    this.getProjectList(1);
+    this.getActivityList(1);
   },
   methods: {
     handleCurrentChange(newPage) {
       this.currentPage1 = newPage;
       // console.log(this.currentPage1)
-      this.getProjectList(this.currentPage1);
+      this.getActivityList(this.currentPage1);
     },
-    async getProjectList(page) {
-      const project = await this.$axios.$get(
-        "/man/list/project?page=" + page,
+    formatBoolean: function (row, column, cellValue) {
+      var ret = ''
+      if (cellValue) {
+        ret = '是'
+      } else {
+        ret = '否'
+      }
+      return ret
+    },
+    async getActivityList(page) {
+      const activity = await this.$axios.$get(
+        "/man/list/activity?page=" + page,
         {
           withCredentials: true,
         }
       );
-      if (project["code"] != 0) return;
-      this.tableData = project["data"];
-      this.total_count = project["total_count"];
+      if (activity["code"] != 0) return;
+      this.tableData = activity["data"];
+      this.total_count = activity["total_count"];
     },
 
     addDialogClosed() {

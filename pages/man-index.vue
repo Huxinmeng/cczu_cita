@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav />
+    <Nav/>
 
     <el-container>
       <el-aside width="200px">
@@ -35,7 +35,7 @@
                 <span>获奖情况</span>
               </template>
             </el-menu-item>
-            <el-menu-item>
+            <el-menu-item @click="change(5)">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>导师信息</span>
@@ -52,16 +52,19 @@
       </el-aside>
       <el-main>
         <div v-if="index == 1">
-          <TeamMember />
+          <TeamMember/>
         </div>
         <div v-if="index == 2">
-          <ActTable />
+          <ActTable/>
         </div>
         <div v-if="index == 3">
-          <ProjectTable />
+          <ProjectTable/>
         </div>
         <div v-if="index == 4">
-          <AwardTable />
+          <AwardTable/>
+        </div>
+        <div v-if="index == 5">
+          <TeacherTable/>
         </div>
       </el-main>
     </el-container>
@@ -76,16 +79,20 @@ import TeamPage from "../components/TeamPage";
 import TeamMember from "../components/TeamMember";
 import ActTable from "../components/ActTable";
 import ProjectTable from "../components/ProjectTable";
+import AwardTable from "~/components/AwardTable";
+import TeacherTable from "~/components/TeacherTable";
 
 export default {
   components: {
+    TeacherTable,
     TeamPage,
     PageHeader,
     FooterTwo,
     Nav,
     TeamMember,
     ActTable,
-    ProjectTable
+    ProjectTable,
+    AwardTable
   },
   data() {
     return {
@@ -108,8 +115,9 @@ export default {
     },
     async judgeLogin() {
       const response = await this.$axios
-        .post("/man/login", null, { withCredentials: true })
-        .then((res) => {})
+        .post("/man/login", null, {withCredentials: true})
+        .then((res) => {
+        })
         .catch((error) => {
           // console.log(error);
           alert("验证过期，请重新登录");
@@ -131,6 +139,7 @@ a {
   color: white;
   background-color: #55585a;
 }
+
 a:hover {
   background-color: #ff6700;
 }
