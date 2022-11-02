@@ -24,7 +24,7 @@
         </el-col>
       </el-row>
 
-      <el-table :data="tableData" border style="width: 100%">
+      <el-table :data="tableData" border style="width: 100%" height="450">
         <el-table-column prop="number" label="学号" width="180">
         </el-table-column>
         <el-table-column prop="name" label="姓名" width="180">
@@ -41,7 +41,6 @@
               size="mini"
               @click="showEditDialog(scope.row.id)"
             ></el-button>
-            <br />
             <el-button
               type="danger"
               icon="el-icon-delete"

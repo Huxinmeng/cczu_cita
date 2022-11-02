@@ -92,6 +92,9 @@ export default {
               } else {
                 alert("账号或者密码有误，请重新登录");
               }
+            })
+            .catch((error) => {
+              alert("账号或者密码有误，请重新登录");
             });
         }
       } else {
@@ -111,6 +114,6 @@ export default {
 
 <style scoped>
 .comment-form {
-  margin-left: 380px;
+  margin-left: 60%;
 }
 </style>

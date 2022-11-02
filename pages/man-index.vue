@@ -23,13 +23,13 @@
                 <span>活动</span>
               </template>
             </el-menu-item>
-            <el-menu-item>
+            <el-menu-item @click="change(3)">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>项目</span>
               </template>
             </el-menu-item>
-            <el-menu-item>
+            <el-menu-item @click="change(4)">
               <template slot="title">
                 <i class="el-icon-location"></i>
                 <span>获奖情况</span>
@@ -57,6 +57,12 @@
         <div v-if="index == 2">
           <ActTable />
         </div>
+        <div v-if="index == 3">
+          <ProjectTable />
+        </div>
+        <div v-if="index == 4">
+          <AwardTable />
+        </div>
       </el-main>
     </el-container>
   </div>
@@ -69,6 +75,8 @@ import PageHeader from "../components/PageHeader";
 import TeamPage from "../components/TeamPage";
 import TeamMember from "../components/TeamMember";
 import ActTable from "../components/ActTable";
+import ProjectTable from "../components/ProjectTable";
+
 export default {
   components: {
     TeamPage,
@@ -77,6 +85,7 @@ export default {
     Nav,
     TeamMember,
     ActTable,
+    ProjectTable
   },
   data() {
     return {
@@ -85,13 +94,27 @@ export default {
   },
   head() {
     return {
-      title: "科创协会 - C.A.Science and Technology Innovation Association | 管理页面",
+      title:
+        "科创协会 - C.A.Science and Technology Innovation Association | 管理页面",
     };
+  },
+  created() {
+    // this.judgeLogin();
   },
   methods: {
     change(nu) {
       this.index = nu;
       console.log(this.index);
+    },
+    async judgeLogin() {
+      const response = await this.$axios
+        .post("/man/login", null, { withCredentials: true })
+        .then((res) => {})
+        .catch((error) => {
+          // console.log(error);
+          alert("验证过期，请重新登录");
+          this.$router.push("/man-login");
+        });
     },
   },
 };
