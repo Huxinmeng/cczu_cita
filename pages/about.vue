@@ -9,14 +9,14 @@
     <BrandArea />
     <LeadershipPage />
     <ContactArea />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import AboutPage from "../components/AboutPage";
   import FunFactArea from "../components/FunFactArea";
@@ -35,7 +35,7 @@
       FunFactArea,
       AboutPage,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

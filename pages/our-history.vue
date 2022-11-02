@@ -3,21 +3,21 @@
     <Nav />
     <PageHeader title="Our History" />
     <HistoryPage />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import HistoryPage from "../components/HistoryPage";
   export default {
     components: {
       HistoryPage,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

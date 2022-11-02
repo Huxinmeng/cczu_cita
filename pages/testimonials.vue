@@ -4,14 +4,14 @@
     <PageHeader title="Testimonials" />
     <TestimonialPage />
     <ContactArea />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import TestimonialPage from "../components/TestimonialPage";
   import ContactArea from "../components/ContactArea";
@@ -20,7 +20,7 @@
       ContactArea,
       TestimonialPage,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

@@ -13,7 +13,7 @@
     <BrandArea />
     <BlogTwoArea />
     <GMap />
-    <FooterTwo />
+    <Footer />
   </div>
 
 </template>
@@ -32,10 +32,10 @@
   import BrandArea from "../components/BrandArea";
   import BlogTwoArea from "../components/BlogTwoArea";
   import GMap from "../components/GMap";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   export default {
     components: {
-      FooterTwo,
+      Footer,
       GMap,
       BlogTwoArea,
       BrandArea,

@@ -4,14 +4,14 @@
     <PageHeader title="Contact us" />
     <ContactPage />
     <GMap />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import ContactPage from "../components/ContactPage";
   import GMap from "../components/GMap";
@@ -20,7 +20,7 @@
       GMap,
       ContactPage,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

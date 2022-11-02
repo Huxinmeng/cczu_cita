@@ -3,21 +3,21 @@
     <Nav />
     <PageHeader title="Services" />
     <ServicePage />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import ServicePage from "../components/ServicePage";
   export default {
     components: {
       ServicePage,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

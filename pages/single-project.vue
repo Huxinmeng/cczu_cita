@@ -3,21 +3,21 @@
     <Nav />
     <PageHeader title="Bridge construction" />
     <ProjectSingle />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import ProjectSingle from "../components/ProjectSingle";
   export default {
     components: {
       ProjectSingle,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

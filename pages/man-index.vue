@@ -73,7 +73,7 @@
 
 <script>
 import Nav from "../components/Nav";
-import FooterTwo from "../components/FooterTwo";
+import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
 import TeamPage from "../components/TeamPage";
 import TeamMember from "../components/TeamMember";
@@ -87,7 +87,7 @@ export default {
     TeacherTable,
     TeamPage,
     PageHeader,
-    FooterTwo,
+    Footer,
     Nav,
     TeamMember,
     ActTable,

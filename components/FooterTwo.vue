@@ -123,7 +123,7 @@
 
 <script>
     export default {
-      name: "FooterTwo",
+      name: "Footer",
       data(){
         return {
           scrollBtn: false

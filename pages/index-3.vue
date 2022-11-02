@@ -14,7 +14,7 @@
     <ExperienceArea />
     <BlogThreeArea />
     <BrandThreeArea />
-    <FooterTwo />
+    <Footer />
   </div>
 
 </template>
@@ -22,7 +22,7 @@
 <script>
   import NavThree from "../components/NavThree";
   import SliderTwo from "../components/SliderTwo";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import NanoArea from "../components/NanoArea";
   import AboutArea from "../components/AboutArea";
   import EmailArea from "../components/EmailArea";
@@ -51,7 +51,7 @@
       NanoArea,
       NavThree,
       SliderTwo,
-      FooterTwo,
+      Footer,
     },
     head(){
       return {

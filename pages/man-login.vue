@@ -9,14 +9,14 @@
 
 <script>
 import Nav from "../components/Nav";
-import FooterTwo from "../components/FooterTwo";
+import Footer from "../components/Footer";
 import PageHeader from "../components/PageHeader";
 import BlogSingle from "../components/ManageLogin";
 export default {
   components: {
     BlogSingle,
     PageHeader,
-    FooterTwo,
+    Footer,
     Nav,
   },
 

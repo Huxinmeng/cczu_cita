@@ -3,21 +3,21 @@
     <Nav />
     <PageHeader title="Factory construction" />
     <SingleService />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import SingleService from "../components/SingleService";
   export default {
     components: {
       SingleService,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){

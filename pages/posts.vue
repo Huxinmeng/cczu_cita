@@ -3,21 +3,21 @@
     <Nav />
     <PageHeader title="Blog Posts" />
     <BlogPage />
-    <FooterTwo />
+    <Footer />
   </div>
 </template>
 
 <script>
 
   import Nav from "../components/Nav";
-  import FooterTwo from "../components/FooterTwo";
+  import Footer from "../components/Footer";
   import PageHeader from "../components/PageHeader";
   import BlogPage from "../components/BlogPage";
   export default {
     components: {
       BlogPage,
       PageHeader,
-      FooterTwo,
+      Footer,
       Nav
     },
     head(){
