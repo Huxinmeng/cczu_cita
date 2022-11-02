@@ -260,7 +260,7 @@ export default {
       this.getActivityList(this.currentPage);
     },
     async getActivityList(page) {
-      if (this.searchWord != '') {
+      if (this.searchWord == '' || this.searchWord == null) {
         const activity = await this.$axios.$get(
           "/man/list/activity?page=" + page,
           {
