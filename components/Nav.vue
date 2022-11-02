@@ -104,7 +104,7 @@
                         </li>
                         <li>
                           <nuxt-link to="/single-project"
-                            >CTIA科协主办</nuxt-link
+                            >CTIA科协周赛</nuxt-link
                           >
                         </li>
                       </ul>
