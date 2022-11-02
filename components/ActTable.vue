@@ -127,13 +127,13 @@
           <el-input v-model="addForm.time" autocomplete="off" type="date"></el-input>
         </el-form-item>
         <el-form-item label="活动详情id" prop="detail_page_id">
-          <el-input v-model="addForm.detail_page_id" autocomplete="off"></el-input>
+          <el-input v-model="addForm.detail_page_id" autocomplete="off" type="number"></el-input>
         </el-form-item>
         <el-form-item label="活动详情url" prop="detail_page_url">
           <el-input v-model="addForm.detail_page_url" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="活动类型" prop="type">
-          <el-input v-model="addForm.type" autocomplete="off"></el-input>
+          <el-input v-model="addForm.type" autocomplete="off" type="number"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -211,14 +211,14 @@ export default {
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
-        first_title: "",
-        second_title: "",
-        img_url: "",
-        resize_img_url: "",
-        time: "",
-        detail_page_id: "",
-        detail_page_url: "",
-        type: "",
+        first_title: null,
+        second_title: null,
+        img_url: null,
+        resize_img_url: null,
+        time: null,
+        detail_page_id: null,
+        detail_page_url: null,
+        type: 0,
       },
       addFromRules: {
         first_title: [
