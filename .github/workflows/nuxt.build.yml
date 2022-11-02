@@ -53,7 +53,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        password: ${{ secrets.password }}
         script: |
           cd /opt/software/cita
           wget http://f.941103.xyz:8123/https://github.com/Huxinmeng/cczu_cita/releases/latest/download/release.tgz -O release.tgz

@@ -246,13 +246,13 @@ export default {
     };
   },
   created() {
-    this.getActivityList(1);
+    this.getAwardList(1);
   },
   methods: {
     handleCurrentChange(newPage) {
       this.currentPage1 = newPage;
       // console.log(this.currentPage1)
-      this.getActivityList(this.currentPage1);
+      this.getAwardList(this.currentPage1);
     },
     formatBoolean: function (row, column, cellValue) {
       var ret = ''
@@ -263,16 +263,16 @@ export default {
       }
       return ret
     },
-    async getActivityList(page) {
-      const activity = await this.$axios.$get(
-        "/man/list/activity?page=" + page,
+    async getAwardList(page) {
+      const award = await this.$axios.$get(
+        "/man/list/award?page=" + page,
         {
           withCredentials: true,
         }
       );
-      if (activity["code"] != 0) return;
-      this.tableData = activity["data"];
-      this.total_count = activity["total_count"];
+      if (award["code"] != 0) return;
+      this.tableData = award["data"];
+      this.total_count = award["total_count"];
     },
 
     addDialogClosed() {
