@@ -101,7 +101,7 @@
     </el-card>
 
     <el-dialog
-      title="添加用户信息"
+      title="添加活动"
       :visible.sync="addDialogVisible"
       @close="addDialogClosed"
     >
@@ -111,19 +111,34 @@
         :rules="addFromRules"
         ref="addFormRef"
       >
-        <el-form-item label="用户名" prop="username">
-          <el-input v-model="addForm.username" autocomplete="off"></el-input>
+        <el-form-item label="第一标题" prop="first_title">
+          <el-input v-model="addForm.first_title" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="addForm.password" autocomplete="off"></el-input>
+        <el-form-item label="第二标题" prop="second_title">
+          <el-input v-model="addForm.second_title" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="addForm.email" autocomplete="off"></el-input>
+        <el-form-item label="活动图片" prop="img_url">
+          <el-input v-model="addForm.img_url" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动小图" prop="resize_img_url">
+          <el-input v-model="addForm.resize_img_url" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动时间" prop="time">
+          <el-input v-model="addForm.time" autocomplete="off" type="date"></el-input>
+        </el-form-item>
+        <el-form-item label="活动详情id" prop="detail_page_id">
+          <el-input v-model="addForm.detail_page_id" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动详情url" prop="detail_page_url">
+          <el-input v-model="addForm.detail_page_url" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动类型" prop="type">
+          <el-input v-model="addForm.type" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="addDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="addUser">确 定</el-button>
+        <el-button type="primary" @click="addAct">确 定</el-button>
       </div>
     </el-dialog>
 
@@ -196,37 +211,51 @@ export default {
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
-        username: "",
-        password: "",
-        email: "",
+        first_title: "",
+        second_title: "",
+        img_url: "",
+        resize_img_url: "",
+        time: "",
+        detail_page_id: "",
+        detail_page_url: "",
+        type: "",
       },
       addFromRules: {
-        username: [
-          {required: true, message: "请输入用户名称", trigger: "blur"},
+        first_title: [
+          {required: true, message: "请输入第一标题", trigger: "blur"},
           {
-            min: 5,
+            min: 4,
             max: 12,
-            message: "长度在 5 到 12 个字符",
+            message: "长度在 4 到 12 个字符",
             trigger: "blur",
           },
         ],
-        password: [
-          {required: true, message: "请输入密码", trigger: "blur"},
+        second_title: [
+          {required: true, message: "请输入第二标题", trigger: "blur"},
           {
-            min: 6,
-            max: 10,
-            message: "长度在 6 到 10 个字符",
+            min: 4,
+            max: 12,
+            message: "长度在 4 到 12 个字符",
             trigger: "blur",
           },
         ],
-        email: [
-          {required: true, message: "请输入邮箱", trigger: "blur"},
-          {
-            min: 6,
-            max: 15,
-            message: "长度在 6 到 15 个字符",
-            trigger: "blur",
-          },
+        img_url: [
+          {required: false, message: "请输入图片地址", trigger: "blur"},
+        ],
+        resize_img_url: [
+          {required: false, message: "请输入小图地址", trigger: "blur"},
+        ],
+        time: [
+          {required: true, message: "请选择时间", trigger: "blur"},
+        ],
+        detail_page_id: [
+          {required: false, message: "请输入详情页面id", trigger: "blur"},
+        ],
+        detail_page_url: [
+          {required: false, message: "请输入详情页面网址", trigger: "blur"},
+        ],
+        type: [
+          {required: false, message: "请输入活动类型(默认为0)", trigger: "blur"},
         ],
       },
       editForm: {
@@ -290,7 +319,7 @@ export default {
         ).catch((err) => {
           if (err.response.status == 401 || err.response.status == 422) {
             alert("验证过期，请重新登录");
-            this.$router.push("/man-login");
+            // this.$router.push("/man-login");
           }
         });
         if (activity["code"] != 0) return;
@@ -317,14 +346,22 @@ export default {
     addDialogClosed() {
       this.$refs.addFormRef.resetFields();
     },
-    addUser() {
-      this.$refs.addFormRef.validate(async (valid) => {
+    async addAct() {
+      await this.$refs.addFormRef.validate(async (valid) => {
         if (!valid) return;
-        const {data: res} = await this.$http.post("adduser", this.addForm);
-        if (res != "success") {
+        const res = await this.$axios.post("/man/insert/activity", this.addForm, {withCredentials: true}).catch((err) => {
+          if (err.response.status == 401 || err.response.status == 422) {
+            alert("验证过期，请重新登录")
+            this.$router.push("/man-login");
+          } else {
+            alert("添加失败")
+          }
+        });
+        if (res['code'] != 0) {
           return this.$message.error("操作失败");
         }
         this.$message.success("操作成功");
+        this.tableData.append(this.addForm)
         this.addDialogVisible = false;
       });
     },

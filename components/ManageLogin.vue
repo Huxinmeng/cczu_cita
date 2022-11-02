@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { setCookie, getCookie } from "../static/js/cookie.js";
+// import { setCookie, getCookie } from "../static/js/cookie.js";
 export default {
   name: "BlogSingle",
   data() {
