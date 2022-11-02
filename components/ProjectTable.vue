@@ -3,8 +3,8 @@
     <el-card>
       <el-row>
         <el-col :span="10">
-          <el-input placeholder="请输入搜索内容">
-            <el-button slot="append" icon="el-icon-search"></el-button>
+          <el-input placeholder="请输入搜索内容" v-model="searchWord" clearable @clear="getProjectList(1)">
+            <el-button slot="append" icon="el-icon-search" @click="searchByWord(1)"></el-button>
           </el-input>
         </el-col>
         <el-col :span="4">
@@ -150,7 +150,7 @@
     </el-dialog>
     <el-pagination
       @current-change="handleCurrentChange"
-      :current-page.sync="currentPage1"
+      :current-page.sync="currentPage"
       :page-size="10"
       layout="total, prev, pager, next"
       :total="total_count"
@@ -180,7 +180,7 @@ export default {
       total_count: 1,
       userList: [],
       total: 0,
-      currentPage1: 1,
+      currentPage: 1,
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
@@ -242,6 +242,7 @@ export default {
           },
         ],
       },
+      searchWord: ''
     };
   },
   created() {
@@ -249,19 +250,37 @@ export default {
   },
   methods: {
     handleCurrentChange(newPage) {
-      this.currentPage1 = newPage;
+      this.currentPage = newPage;
       // console.log(this.currentPage1)
-      this.getProjectList(this.currentPage1);
+      this.getProjectList(this.currentPage);
     },
     async getProjectList(page) {
-      const project = await this.$axios.$get(
-        "/man/list/project?page=" + page,
+      if (this.searchWord == '' || this.searchWord == null) {
+        const project = await this.$axios.$get(
+          "/man/list/project?page=" + page,
+          {
+            withCredentials: true,
+          }
+        ).catch((err) => {
+          alert("验证过期，请重新登录");
+          this.$router.push("/man-login");
+        });
+        if (project["code"] != 0) return;
+        this.tableData = project["data"];
+        this.total_count = project["total_count"];
+      } else {
+        await this.searchByWord(page)
+      }
+    },
+    async searchByWord(page) {
+      const project = await this.$axios.$get(`/man/search/project?page=${page}&query=${this.searchWord}`,
         {
           withCredentials: true,
+        }).catch((err) => {
+        if (err.response.status == 401 || err.response.status == 422) {
+          alert("验证过期，请重新登录");
+          this.$router.push("/man-login");
         }
-      ).catch((err) => {
-        alert("验证过期，请重新登录");
-        this.$router.push("/man-login");
       });
       if (project["code"] != 0) return;
       this.tableData = project["data"];

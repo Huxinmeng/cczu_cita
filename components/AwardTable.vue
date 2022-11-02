@@ -3,8 +3,8 @@
     <el-card>
       <el-row>
         <el-col :span="10">
-          <el-input placeholder="请输入搜索内容">
-            <el-button slot="append" icon="el-icon-search"></el-button>
+          <el-input placeholder="请输入搜索内容" v-model="searchWord" clearable @clear="getAwardList(1)">
+            <el-button slot="append" icon="el-icon-search" @click="searchByWord(1)"></el-button>
           </el-input>
         </el-col>
         <el-col :span="4">
@@ -154,7 +154,7 @@
     </el-dialog>
     <el-pagination
       @current-change="handleCurrentChange"
-      :current-page.sync="currentPage1"
+      :current-page.sync="currentPage"
       :page-size="10"
       layout="total, prev, pager, next"
       :total="total_count"
@@ -185,7 +185,7 @@ export default {
       total_count: 1,
       userList: [],
       total: 0,
-      currentPage1: 1,
+      currentPage: 1,
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
@@ -247,6 +247,7 @@ export default {
           },
         ],
       },
+      searchWord: ''
     };
   },
   created() {
@@ -254,9 +255,9 @@ export default {
   },
   methods: {
     handleCurrentChange(newPage) {
-      this.currentPage1 = newPage;
+      this.currentPage = newPage;
       // console.log(this.currentPage1)
-      this.getAwardList(this.currentPage1);
+      this.getAwardList(this.currentPage);
     },
     formatBoolean: function (row, column, cellValue) {
       var ret = ''
@@ -268,14 +269,31 @@ export default {
       return ret
     },
     async getAwardList(page) {
-      const award = await this.$axios.$get(
-        "/man/list/award?page=" + page,
+      if (this.searchWord == '' || this.searchWord == null) {
+        const award = await this.$axios.$get(
+          "/man/list/award?page=" + page,
+          {
+            withCredentials: true,
+          }
+        ).catch((err) => {
+          alert("验证过期，请重新登录");
+          this.$router.push("/man-login");
+        });
+        if (award["code"] != 0) return;
+        this.tableData = award["data"];
+        this.total_count = award["total_count"];
+      } else {
+        await this.searchByWord(page)
+      }
+    }, async searchByWord(page) {
+      const award = await this.$axios.$get(`/man/search/award?page=${page}&query=${this.searchWord}`,
         {
           withCredentials: true,
+        }).catch((err) => {
+        if (err.response.status == 401 || err.response.status == 422) {
+          alert("验证过期，请重新登录");
+          this.$router.push("/man-login");
         }
-      ).catch((err) => {
-        alert("验证过期，请重新登录");
-        this.$router.push("/man-login");
       });
       if (award["code"] != 0) return;
       this.tableData = award["data"];
@@ -284,7 +302,8 @@ export default {
 
     addDialogClosed() {
       this.$refs.addFormRef.resetFields();
-    },
+    }
+    ,
     addUser() {
       this.$refs.addFormRef.validate(async (valid) => {
         if (!valid) return;
@@ -295,7 +314,8 @@ export default {
         this.$message.success("操作成功");
         this.addDialogVisible = false;
       });
-    },
+    }
+    ,
     async deleteUser(id) {
       const confirmResult = await this.$confirm(
         "此操作将永久删除用户，是否继续？",
@@ -314,13 +334,16 @@ export default {
         return this.$message.error("操作失败");
       }
       this.$message.success("操作成功");
-    },
+    }
+    ,
     async showEditDialog(id) {
       this.editDialogVisible = true;
-    },
+    }
+    ,
     editDialogClosed() {
       this.$refs.editFormRef.resetFields();
-    },
+    }
+    ,
     editUser() {
       this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return;
@@ -331,9 +354,11 @@ export default {
         this.$message.success("操作成功");
         this.editDialogVisible = false;
       });
-    },
+    }
+    ,
   },
-};
+}
+;
 </script>
 
 <style scoped>
