@@ -106,7 +106,7 @@ export default {
     };
   },
   created() {
-    // this.judgeLogin();
+    this.judgeLogin();
   },
   methods: {
     change(nu) {
@@ -120,7 +120,7 @@ export default {
         })
         .catch((error) => {
           // console.log(error);
-          alert("验证过期，请重新登录");
+          this.$message.warning("验证过期，请重新登录")
           this.$router.push("/man-login");
         });
     },

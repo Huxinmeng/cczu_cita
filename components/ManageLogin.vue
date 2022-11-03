@@ -77,7 +77,7 @@ export default {
     async login(submit_flag) {
       if (submit_flag) {
         if (this.username == "" || this.password == "") {
-          alert("请输入用户名或密码");
+          this.$message.error("请输入用户名或密码");
         } else {
           let formData = new FormData();
           formData.append("username", this.username);
@@ -90,11 +90,11 @@ export default {
                 this.$router.push("/man-index");
                 // console.log(res.headers);
               } else {
-                alert("账号或者密码有误，请重新登录");
+                this.$message.error("账号或者密码有误，请重新登录");
               }
             })
             .catch((error) => {
-              alert("账号或者密码有误，请重新登录");
+              this.$message.error("账号或者密码有误，请重新登录");
             });
         }
       } else {

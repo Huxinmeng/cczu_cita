@@ -318,7 +318,7 @@ export default {
           }
         ).catch((err) => {
           if (err.response.status == 401 || err.response.status == 422) {
-            alert("验证过期，请重新登录");
+            this.$message.error("验证过期，请重新登录");
             // this.$router.push("/man-login");
           }
         });
@@ -335,7 +335,7 @@ export default {
           withCredentials: true,
         }).catch((err) => {
         if (err.response.status == 401 || err.response.status == 422) {
-          alert("验证过期，请重新登录");
+          this.$message.error("验证过期，请重新登录");
           this.$router.push("/man-login");
         }
       });
@@ -351,14 +351,14 @@ export default {
         if (!valid) return;
         const res = await this.$axios.post("/man/insert/activity", this.addForm, {withCredentials: true}).catch((err) => {
           if (err.response.status == 401 || err.response.status == 422) {
-            alert("验证过期，请重新登录")
+            this.$message.error("验证过期，请重新登录")
             this.$router.push("/man-login");
           } else {
             this.$message.error("操作失败");
           }
         });
-        console.log(res)
-        if (res['code'] != 0) {
+        // console.log(res)
+        if (res.status != 201) {
           return this.$message.error("操作失败");
         }
         this.$message.success("操作成功");

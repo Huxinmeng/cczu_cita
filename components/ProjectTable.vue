@@ -262,7 +262,7 @@ export default {
             withCredentials: true,
           }
         ).catch((err) => {
-          alert("验证过期，请重新登录");
+          this.$message.error("验证过期，请重新登录");
           this.$router.push("/man-login");
         });
         if (project["code"] != 0) return;
@@ -278,7 +278,7 @@ export default {
           withCredentials: true,
         }).catch((err) => {
         if (err.response.status == 401 || err.response.status == 422) {
-          alert("验证过期，请重新登录");
+          this.$message.error("验证过期，请重新登录");
           this.$router.push("/man-login");
         }
       });
