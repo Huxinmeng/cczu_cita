@@ -96,7 +96,7 @@
     </el-card>
 
     <el-dialog
-      title="添加用户信息"
+      title="添加奖项"
       :visible.sync="addDialogVisible"
       @close="addDialogClosed"
     >
@@ -106,19 +106,31 @@
         :rules="addFromRules"
         ref="addFormRef"
       >
-        <el-form-item label="用户名" prop="username">
-          <el-input v-model="addForm.username" autocomplete="off"></el-input>
+      <el-form-item label="获奖人员" prop="name">
+          <el-input v-model="addForm.name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="addForm.password" autocomplete="off"></el-input>
+        <el-form-item label="比赛全名" prop="game_name">
+          <el-input v-model="addForm.game_name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="addForm.email" autocomplete="off"></el-input>
+        <el-form-item label="获奖类型" prop="type">
+          <el-input v-model="addForm.type" autocomplete="off"></el-input>
+        </el-form-item>
+         <el-form-item label="获奖级别" prop="level">
+          <el-input v-model="addForm.level" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="比赛时间" prop="game_time">
+          <el-input v-model="addForm.game_time" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="是否有证明材料" prop="if_proved">
+          <el-input v-model="addForm.if_proved" autocomplete="off"></el-input>
+        </el-form-item>
+         <el-form-item label="证明材料url" prop="proved_img_or_url">
+          <el-input v-model="addForm.proved_img_or_url" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="addDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="addUser">确 定</el-button>
+        <el-button type="primary" @click="addAward">确 定</el-button>
       </div>
     </el-dialog>
 
@@ -133,18 +145,27 @@
         :rules="editFromRules"
         ref="editFormRef"
       >
-        <el-form-item label="用户名" prop="username">
-          <el-input
-            v-model="editForm.username"
-            autocomplete="off"
-            disabled
-          ></el-input>
+        
+        <el-form-item label="获奖人员" prop="name">
+          <el-input v-model="editForm.name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="editForm.password" autocomplete="off"></el-input>
+        <el-form-item label="比赛全名" prop="game_name">
+          <el-input v-model="editForm.game_name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="editForm.email" autocomplete="off"></el-input>
+        <el-form-item label="获奖类型" prop="type">
+          <el-input v-model="editForm.type" autocomplete="off"></el-input>
+        </el-form-item>
+         <el-form-item label="获奖级别" prop="level">
+          <el-input v-model="editForm.level" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="比赛时间" prop="game_time">
+          <el-input v-model="editForm.game_time" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="是否有证明材料" prop="if_proved">
+          <el-input v-model="editForm.if_proved" autocomplete="off"></el-input>
+        </el-form-item>
+         <el-form-item label="证明材料url" prop="proved_img_or_url">
+          <el-input v-model="editForm.proved_img_or_url" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -189,62 +210,143 @@ export default {
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
-        username: "",
-        password: "",
-        email: "",
+       game_name: null,
+          player_name: null ,
+          operation_time:  null,
+         level:  null,
+          proved_img_or_url: null,
+         operation_user:  null,
+         id: null,
+          game_time:  null,
+          type:  null,
+          if_proved:  null
       },
       addFromRules: {
-        username: [
-          {required: true, message: "请输入用户名称", trigger: "blur"},
+        name: [
+          {required: true, message: "请输入获奖人员姓名", trigger: "blur"},
           {
-            min: 5,
-            max: 12,
-            message: "长度在 5 到 12 个字符",
+            min: 2,
+            max: 5,
+            message: "长度在 2 到 5 个字符",
             trigger: "blur",
           },
         ],
-        password: [
-          {required: true, message: "请输入密码", trigger: "blur"},
+        game_name: [
+          {required: true, message: "请输入比赛全名", trigger: "blur"},
           {
-            min: 6,
-            max: 10,
-            message: "长度在 6 到 10 个字符",
+            min: 1,
+            max: 20,
+            message: "长度在 1 到 20 个字符",
             trigger: "blur",
           },
         ],
-        email: [
-          {required: true, message: "请输入邮箱", trigger: "blur"},
+        type: [
+          {required: true, message: "请输入奖项类型", trigger: "blur"},
           {
-            min: 6,
+            min: 2,
             max: 15,
-            message: "长度在 6 到 15 个字符",
+            message: "长度在 2 到 15 个字符",
             trigger: "blur",
           },
+        ],
+         level: [
+          {required: true, message: "请输入奖项级别", trigger: "blur"},
+          {
+            min: 2,
+            max: 15,
+            message: "长度在 2 到 15 个字符",
+            trigger: "blur",
+          },
+        ],
+           game_time: [
+          {required: true, message: "请输入比赛时间", trigger: "blur"},
+          {
+            min: 2,
+            max: 15,
+            message: "长度在 2 到 15 个字符",
+            trigger: "blur",
+          },
+          
+        ],
+           if_proved: [
+          {required: true, message: "请输入是否有证明材料", trigger: "blur"},
+          {
+            min: 1,
+            max: 15,
+            message: "长度在 1 到 15 个字符",
+            trigger: "blur",
+          },
+          
         ],
       },
       editForm: {
-        username: "",
-        password: "",
-        email: "",
+         game_name: null,
+          player_name: null ,
+          operation_time:  null,
+         level:  null,
+          proved_img_or_url: null,
+         operation_user:  null,
+         id: null,
+          game_time:  null,
+          type:  null,
+          if_proved:  null
       },
       editFromRules: {
-        password: [
-          {required: true, message: "请输入密码", trigger: "blur"},
+         name: [
+          {required: true, message: "请输入获奖人员姓名", trigger: "blur"},
           {
-            min: 6,
-            max: 10,
-            message: "长度在 6 到 10 个字符",
+            min: 2,
+            max: 5,
+            message: "长度在 2 到 5 个字符",
             trigger: "blur",
           },
         ],
-        email: [
-          {required: true, message: "请输入邮箱", trigger: "blur"},
+        game_name: [
+          {required: true, message: "请输入比赛全名", trigger: "blur"},
           {
-            min: 6,
-            max: 15,
-            message: "长度在 6 到 15 个字符",
+            min: 1,
+            max: 20,
+            message: "长度在 1 到 20 个字符",
             trigger: "blur",
           },
+        ],
+        type: [
+          {required: true, message: "请输入奖项类型", trigger: "blur"},
+          {
+            min: 2,
+            max: 15,
+            message: "长度在 2 到 15 个字符",
+            trigger: "blur",
+          },
+        ],
+         level: [
+          {required: true, message: "请输入奖项级别", trigger: "blur"},
+          {
+            min: 2,
+            max: 15,
+            message: "长度在 2 到 15 个字符",
+            trigger: "blur",
+          },
+        ],
+           game_time: [
+          {required: true, message: "请输入比赛时间", trigger: "blur"},
+          {
+            min: 2,
+            max: 15,
+            message: "长度在 2 到 15 个字符",
+            trigger: "blur",
+          },
+          
+        ],
+           if_proved: [
+          {required: true, message: "请输入是否有证明材料", trigger: "blur"},
+          {
+            min: 1,
+            max: 15,
+            message: "长度在 1 到 15 个字符",
+            trigger: "blur",
+          },
+          
         ],
       },
       searchWord: ''
@@ -304,14 +406,23 @@ export default {
       this.$refs.addFormRef.resetFields();
     }
     ,
-    addUser() {
-      this.$refs.addFormRef.validate(async (valid) => {
+     async addAward() {
+       await this.$refs.addFormRef.validate(async (valid) => {
         if (!valid) return;
-        const {data: res} = await this.$http.post("adduser", this.addForm);
-        if (res != "success") {
+        const res = await this.$axios.post("/man/insert/activity", this.addForm, {withCredentials: true}).catch((err) => {
+          if (err.response.status == 401 || err.response.status == 422) {
+            this.$message.error("验证过期，请重新登录")
+            this.$router.push("/man-login");
+          } else {
+            this.$message.error("操作失败");
+          }
+        });
+        // console.log(res)
+        if (res.status != 201) {
           return this.$message.error("操作失败");
         }
         this.$message.success("操作成功");
+        await this.getActivityList(this.currentPage)
         this.addDialogVisible = false;
       });
     }
