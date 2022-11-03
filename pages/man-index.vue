@@ -106,7 +106,7 @@ export default {
     };
   },
   created() {
-    // this.judgeLogin();
+    this.judgeLogin();
   },
   methods: {
     change(nu) {
