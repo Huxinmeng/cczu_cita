@@ -111,6 +111,9 @@
         :rules="addFromRules"
         ref="addFormRef"
       >
+        <el-form-item label="序列号" prop="first_title">
+          <el-input v-model="addForm.id" autocomplete="off"></el-input>
+        </el-form-item>
         <el-form-item label="第一标题" prop="first_title">
           <el-input v-model="addForm.first_title" autocomplete="off"></el-input>
         </el-form-item>
@@ -154,6 +157,9 @@
         ref="editFormRef"
 
       >
+        <el-form-item label="序列号" prop="first_title">
+          <el-input v-model="editForm.id" autocomplete="off"></el-input>
+        </el-form-item>
         <el-form-item label="第一标题" prop="first_title">
           <el-input v-model="editForm.first_title" autocomplete="off"></el-input>
         </el-form-item>
@@ -224,6 +230,7 @@ export default {
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
+        id: null,
         first_title: null,
         second_title: null,
         img_url: null,
@@ -234,6 +241,9 @@ export default {
         type: 0,
       },
       addFromRules: {
+        id: [{required: true, message: "请输入活动序列号", trigger: "blur"}, {
+          min: 10, max: 10, message: "序列化为10位数字", trigger: "blur"
+        }],
         first_title: [
           {required: true, message: "请输入第一标题", trigger: "blur"},
           {
@@ -272,6 +282,7 @@ export default {
         ],
       },
       editForm: {
+        id: null,
         first_title: null,
         second_title: null,
         img_url: null,
@@ -282,6 +293,9 @@ export default {
         type: 0,
       },
       editFromRules: {
+        id: [{required: true, message: "请输入活动序列号", trigger: "blur"}, {
+          min: 10, max: 10, message: "序列化为10位数字", trigger: "blur"
+        }],
         first_title: [
           {required: true, message: "请输入第一标题", trigger: "blur"},
           {
