@@ -111,7 +111,7 @@
         :rules="addFromRules"
         ref="addFormRef"
       >
-        <el-form-item label="序列号" prop="first_title">
+        <el-form-item label="序列号" prop="id">
           <el-input v-model="addForm.id" autocomplete="off" type="number"></el-input>
         </el-form-item>
         <el-form-item label="第一标题" prop="first_title">
