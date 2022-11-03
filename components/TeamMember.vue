@@ -3,11 +3,11 @@
     <el-card>
       <el-row>
         <el-col :span="10">
-          <el-input placeholder="请输入搜索内容" v-model="queryInfo.query" clearable>
+          <el-input placeholder="请输入搜索内容" v-model="searchWord" clearable @clear="getPartnerList(1)">
             <el-button
               slot="append"
               icon="el-icon-search"
-              @click="getUserList"
+              @click="searchByWord(1)"
             ></el-button>
           </el-input>
         </el-col>
@@ -26,12 +26,18 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%" height="450">
-        <el-table-column prop="number" label="学号" sortable>
+        <el-table-column prop="id" label="id" sortable>
+        </el-table-column>
+        <el-table-column prop="number" label="学号">
         </el-table-column>
         <el-table-column prop="name" label="姓名">
         </el-table-column>
-        <el-table-column prop="class" label="班级" sortable></el-table-column>
-        <el-table-column prop="depart" label="部门" sortable></el-table-column>
+        <el-table-column prop="sex" label="性别">
+        </el-table-column>
+        <el-table-column prop="phone" label="电话">
+        </el-table-column>
+        <el-table-column prop="class_" label="班级"></el-table-column>
+        <el-table-column prop="department" label="部门" sortable></el-table-column>
         <el-table-column prop="position" label="职务"></el-table-column>
         <el-table-column prop="year" label="年份" sortable></el-table-column>
         <el-table-column label="操作">
@@ -114,10 +120,10 @@
     </el-dialog>
     <el-pagination
       @current-change="handleCurrentChange"
-      :current-page.sync="currentPage1"
-      :page-size="100"
+      :current-page.sync="currentPage"
+      :page-size="10"
       layout="total, prev, pager, next"
-      :total="1000"
+      :total="total_count"
     >
     </el-pagination>
   </div>
@@ -130,96 +136,24 @@ export default {
     return {
       tableData: [
         {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
-        },
-        {
-          number: "20477108",
-          name: "王小虎",
-          class: "软件212",
-          depart: "项目部",
-          position: "干事",
-          year: "2022",
+          "operation_time": "2022-11-03T22:00:51",
+          "number": "20496120",
+          "department": "其他",
+          "phone": null,
+          "year": 2022,
+          "operation_user": 1,
+          "name": "黄文凯",
+          "class_": "大数据201",
+          "id": 1,
+          "sex": "男",
+          "position": "主席团"
         },
       ],
-      queryInfo: {
-        query: "",
-        pageNum: 1, //当前页
-        pageSize: 5,
-      },
-      userList: [],
+      total_count: 1,
       total: 0,
       addDialogVisible: false,
       editDialogVisible: false,
-      currentPage4: 4,
+      currentPage: 1,
       addForm: {
         username: "",
         password: "",
@@ -279,20 +213,48 @@ export default {
           },
         ],
       },
+      searchWord: "",
+      currentActId: null
     };
+  }, created() {
+    this.getPartnerList(1);
   },
   methods: {
-    async getUserList() {
-      const {data: res} = await this.$axios.get("alluser", {
-        params: this.queryInfo,
-      });
-      this.userList = res.data;
-      this.total = res.numbers;
+    async getPartnerList(page) {
+      if (this.searchWord == "" || this.searchWord == null) {
+        const award = await this.$axios
+          .$get("/man/list/student?page=" + page, {
+            withCredentials: true,
+          })
+          .catch((err) => {
+            this.$message.error("验证过期，请重新登录");
+            this.$router.push("/man-login");
+          });
+        if (award["code"] != 0) return;
+        this.tableData = award["data"];
+        this.total_count = award["total_count"];
+      } else {
+        await this.searchByWord(page);
+      }
     },
-
+    async searchByWord(page) {
+      const award = await this.$axios
+        .$get(`/man/search/student?page=${page}&query=${this.searchWord}`, {
+          withCredentials: true,
+        })
+        .catch((err) => {
+          if (err.response.status == 401 || err.response.status == 422) {
+            this.$message.error("验证过期，请重新登录");
+            this.$router.push("/man-login");
+          }
+        });
+      if (award["code"] != 0) return;
+      this.tableData = award["data"];
+      this.total_count = award["total_count"];
+    },
     handleCurrentChange(newPage) {
-      this.queryInfo.pageNum = newPage;
-      this.getUserList();
+      this.currentPage = newPage;
+      this.getPartnerList(this.currentPage);
     },
 
     addDialogClosed() {
@@ -307,7 +269,7 @@ export default {
         }
         this.$message.success("操作成功");
         this.addDialogVisible = false;
-        this.getUserList();
+        this.getPartnerList();
       });
     },
     async deleteUser(id) {
@@ -329,7 +291,7 @@ export default {
       }
       this.$message.success("操作成功");
 
-      this.getUserList();
+      this.getPartnerList();
     },
     async showEditDialog(id) {
       this.editDialogVisible = true;
@@ -346,7 +308,7 @@ export default {
         }
         this.$message.success("操作成功");
         this.editDialogVisible = false;
-        this.getUserList();
+        this.getPartnerList();
       });
     },
   },

@@ -268,7 +268,6 @@ export default {
         },
       ],
       total_count: 1,
-      userList: [],
       total: 0,
       currentPage: 1,
       addDialogVisible: false,
