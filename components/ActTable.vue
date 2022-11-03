@@ -91,7 +91,7 @@
               type="danger"
               icon="el-icon-delete"
               size="mini"
-              @click="deleteUser(scope.row.id)"
+              @click="deleteAct(scope.row.id)"
             ></el-button>
           </template>
         </el-table-column>
@@ -143,7 +143,7 @@
     </el-dialog>
 
     <el-dialog
-      title="修改用户信息"
+      title="修改活动信息"
       :visible.sync="editDialogVisible"
       @close="editDialogClosed"
     >
@@ -152,19 +152,31 @@
         :model="editForm"
         :rules="editFromRules"
         ref="editFormRef"
+
       >
-        <el-form-item label="用户名" prop="username">
-          <el-input
-            v-model="editForm.username"
-            autocomplete="off"
-            disabled
-          ></el-input>
+        <el-form-item label="第一标题" prop="first_title">
+          <el-input v-model="editForm.first_title" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="password">
-          <el-input v-model="editForm.password" autocomplete="off"></el-input>
+        <el-form-item label="第二标题" prop="second_title">
+          <el-input v-model="editForm.second_title" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="editForm.email" autocomplete="off"></el-input>
+        <el-form-item label="活动图片" prop="img_url">
+          <el-input v-model="editForm.img_url" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动小图" prop="resize_img_url">
+          <el-input v-model="editForm.resize_img_url" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动时间" prop="time">
+          <el-input v-model="editForm.time" autocomplete="off" type="date"></el-input>
+        </el-form-item>
+        <el-form-item label="活动详情id" prop="detail_page_id">
+          <el-input v-model="editForm.detail_page_id" autocomplete="off" type="number"></el-input>
+        </el-form-item>
+        <el-form-item label="活动详情url" prop="detail_page_url">
+          <el-input v-model="editForm.detail_page_url" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="活动类型" prop="type">
+          <el-input v-model="editForm.type" autocomplete="off" type="number"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -208,6 +220,7 @@ export default {
       userList: [],
       total: 0,
       currentPage: 1,
+      currentActId: null,
       addDialogVisible: false,
       editDialogVisible: false,
       addForm: {
@@ -259,28 +272,51 @@ export default {
         ],
       },
       editForm: {
-        username: "",
-        password: "",
-        email: "",
+        first_title: null,
+        second_title: null,
+        img_url: null,
+        resize_img_url: null,
+        time: null,
+        detail_page_id: null,
+        detail_page_url: null,
+        type: 0,
       },
       editFromRules: {
-        password: [
-          {required: true, message: "请输入密码", trigger: "blur"},
+        first_title: [
+          {required: true, message: "请输入第一标题", trigger: "blur"},
           {
-            min: 6,
-            max: 10,
-            message: "长度在 6 到 10 个字符",
+            min: 4,
+            max: 12,
+            message: "长度在 4 到 12 个字符",
             trigger: "blur",
           },
         ],
-        email: [
-          {required: true, message: "请输入邮箱", trigger: "blur"},
+        second_title: [
+          {required: true, message: "请输入第二标题", trigger: "blur"},
           {
-            min: 6,
-            max: 15,
-            message: "长度在 6 到 15 个字符",
+            min: 4,
+            max: 12,
+            message: "长度在 4 到 12 个字符",
             trigger: "blur",
           },
+        ],
+        img_url: [
+          {required: false, message: "请输入图片地址", trigger: "blur"},
+        ],
+        resize_img_url: [
+          {required: false, message: "请输入小图地址", trigger: "blur"},
+        ],
+        time: [
+          {required: true, message: "请选择时间", trigger: "blur"},
+        ],
+        detail_page_id: [
+          {required: false, message: "请输入详情页面id", trigger: "blur"},
+        ],
+        detail_page_url: [
+          {required: false, message: "请输入详情页面网址", trigger: "blur"},
+        ],
+        type: [
+          {required: false, message: "请输入活动类型(默认为0)", trigger: "blur"},
         ],
       },
       searchWord: ''
@@ -362,13 +398,13 @@ export default {
           return this.$message.error("操作失败");
         }
         this.$message.success("操作成功");
-        this.tableData.append(this.addForm)
+        await this.getActivityList(this.currentPage)
         this.addDialogVisible = false;
       });
     },
-    async deleteUser(id) {
+    async deleteAct(id) {
       const confirmResult = await this.$confirm(
-        "此操作将永久删除用户，是否继续？",
+        "此操作将永久删除该活动，是否继续？",
         "提示",
         {
           confirmButtonText: "确定",
@@ -379,26 +415,34 @@ export default {
       if (confirmResult != "confirm") {
         return this.$message.info("已取消删除");
       }
-      const {data: res} = await this.$http.delete("deleteUser?id=" + id);
-      if (res != "success") {
-        return this.$message.error("操作失败");
-      }
+      const res = await this.$axios.delete("/man/delete/activity?del_id=" + id, {withCredentials: true}).catch((err) => {
+        this.$message.error("操作失败");
+      });
+      // if (res.status != 200) {
+      //   return this.$message.error("操作失败");
+      // }
       this.$message.success("操作成功");
+      await this.getActivityList(this.currentPage)
     },
     async showEditDialog(id) {
       this.editDialogVisible = true;
+      this.currentActId = id
     },
     editDialogClosed() {
       this.$refs.editFormRef.resetFields();
     },
-    editUser() {
-      this.$refs.editFormRef.validate(async (valid) => {
+    async editUser() {
+      await this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return;
-        const {data: res} = await this.$http.post("edituser", this.editForm);
-        if (res != "success") {
+        const res = await this.$axios.post("/man/update/activity?act_id=" + this.currentActId, this.editForm, {withCredentials: true}).catch((err) => {
+          this.$message.error("操作失败")
+        });
+        if (res.status != 200) {
           return this.$message.error("操作失败");
         }
+
         this.$message.success("操作成功");
+        await this.getActivityList(this.currentPage)
         this.editDialogVisible = false;
       });
     },

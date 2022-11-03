@@ -111,7 +111,7 @@ export default {
   methods: {
     change(nu) {
       this.index = nu;
-      console.log(this.index);
+      // console.log(this.index);
     },
     async judgeLogin() {
       const response = await this.$axios
