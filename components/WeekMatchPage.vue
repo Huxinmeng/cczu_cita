@@ -8,7 +8,7 @@
               <img :src="item.img_url" alt="news">
             </div>
             <div class="news-content text-center">
-              <a v-if="item.detail_page_url == null" href="#">{{ item.first_title }}</a>
+              <a :href="item.detail_page_url==null ? '#' : item.detail_page_url">{{ item.first_title }}</a>
               <div class="date">
                 <span><span>{{ item.time.split('T')[0] }}</span><span
                   class="pl-10 pr-10">   -    </span>{{ item.second_title }}</span>
@@ -26,14 +26,7 @@ export default {
   name: "WeekMatchPage",
   data() {
     return {
-      matchList: [{
-        "time": "2022-10-15T00:00:00",
-        "first_title": "测试",
-        "detail_page_url": null,
-        "second_title": "测试",
-        "img_url": "https://hxm-1314321198.cos.ap-nanjing.myqcloud.com/activity_4.jpg",
-        "detail_page_id": 4,
-      }]
+      matchList: []
     }
   }, created() {
     this.getWeekMatchData()

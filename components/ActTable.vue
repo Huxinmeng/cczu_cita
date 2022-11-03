@@ -22,7 +22,7 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="id" label="活动id" width="60"></el-table-column>
+        <el-table-column prop="id" label="活动序列号"></el-table-column>
         <el-table-column
           prop="first_title"
           label="第一标题"
@@ -111,7 +111,7 @@
         :rules="addFromRules"
         ref="addFormRef"
       >
-        <el-form-item label="序列号" prop="first_title">
+        <el-form-item label="序列号" prop="id">
           <el-input v-model="addForm.id" autocomplete="off" type="number"></el-input>
         </el-form-item>
         <el-form-item label="第一标题" prop="first_title">
