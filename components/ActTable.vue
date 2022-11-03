@@ -187,7 +187,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="editUser">确 定</el-button>
+        <el-button type="primary" @click="editAct">确 定</el-button>
       </div>
     </el-dialog>
     <el-pagination
@@ -447,17 +447,15 @@ export default {
       this.currentActId = id
       this.tableData.forEach(element => {
         if (element.id == this.currentActId) {
-          console.log(element)
           this.editForm = JSON.parse(JSON.stringify(element))
-          console.log(this.editForm)
+          return
         }
       })
     },
     editDialogClosed() {
-      console.log(this.editForm)
       this.$refs.editFormRef.resetFields();
     },
-    async editUser() {
+    async editAct() {
       await this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return;
         const res = await this.$axios.post("/man/update/activity?act_id=" + this.currentActId, this.editForm, {withCredentials: true}).catch((err) => {

@@ -21,7 +21,7 @@
             type="primary"
             @click="addDialogVisible = true"
             style="margin-left: 30px"
-            >添加奖项
+          >添加奖项
           </el-button>
         </el-col>
         <el-col :span="3">
@@ -30,7 +30,7 @@
       </el-row>
 
       <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="id" label="id" width="60"></el-table-column>
+        <el-table-column prop="id" label="id"></el-table-column>
         <el-table-column
           prop="player_name"
           label="获奖人员"
@@ -118,27 +118,48 @@
         :rules="addFromRules"
         ref="addFormRef"
       >
-        <el-form-item label="获奖人员" prop="name">
-          <el-input v-model="addForm.name" autocomplete="off"></el-input>
+        <el-form-item label="获奖人员" prop="player_name">
+          <el-input v-model="addForm.player_name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="比赛全名" prop="game_name">
           <el-input v-model="addForm.game_name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="获奖类型" prop="type">
-          <el-input v-model="addForm.type" autocomplete="off"></el-input>
+          <el-radio-group v-model="addForm.type">
+            <el-radio label="国家级" border>国家级</el-radio>
+            <el-radio label="省级" border>省级</el-radio>
+            <el-radio label="校级" border>校级</el-radio>
+            <el-radio label="院级" border>院级</el-radio>
+          </el-radio-group>
+          <!--          <el-input v-model="addForm.type" autocomplete="off"></el-input>-->
         </el-form-item>
         <el-form-item label="获奖级别" prop="level">
-          <el-input v-model="addForm.level" autocomplete="off"></el-input>
+          <!--          <el-input v-model="addForm.level" autocomplete="off"></el-input>-->
+          <el-radio-group v-model="addForm.level">
+            <el-radio label="金奖">金奖</el-radio>
+            <el-radio label="银奖">银奖</el-radio>
+            <el-radio label="铜奖">铜奖</el-radio>
+            <el-radio label="特等奖">特等奖</el-radio>
+            <el-radio label="一等奖">一等奖</el-radio>
+            <el-radio label="二等奖">二等奖</el-radio>
+            <el-radio label="三等奖">三等奖</el-radio>
+            <el-radio label="优秀奖">优秀奖</el-radio>
+            <el-radio label="优秀名次">优秀名次</el-radio>
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="比赛时间" prop="game_time">
           <el-input
             v-model="addForm.game_time"
             autocomplete="off"
-            type="time"
+            type="date"
           ></el-input>
         </el-form-item>
         <el-form-item label="是否有证明材料" prop="if_proved">
-          <el-input v-model="addForm.if_proved" autocomplete="off"></el-input>
+          <el-radio-group v-model="addForm.if_proved">
+            <el-radio :label=true>是</el-radio>
+            <el-radio :label=false>否</el-radio>
+          </el-radio-group>
+          <!--          <el-input v-model="addForm.if_proved" autocomplete="off" type="checkbox"></el-input>-->
         </el-form-item>
         <el-form-item label="证明材料url" prop="proved_img_or_url">
           <el-input
@@ -154,7 +175,7 @@
     </el-dialog>
 
     <el-dialog
-      title="修改用户信息"
+      title="修改奖项信息"
       :visible.sync="editDialogVisible"
       @close="editDialogClosed"
     >
@@ -164,23 +185,45 @@
         :rules="editFromRules"
         ref="editFormRef"
       >
-        <el-form-item label="获奖人员" prop="name">
-          <el-input v-model="editForm.name" autocomplete="off"></el-input>
+        <el-form-item label="获奖人员" prop="player_name">
+          <el-input v-model="editForm.player_name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="比赛全名" prop="game_name">
           <el-input v-model="editForm.game_name" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="获奖类型" prop="type">
-          <el-input v-model="editForm.type" autocomplete="off"></el-input>
+          <el-radio-group v-model="editForm.type">
+            <el-radio label="国家级" border>国家级</el-radio>
+            <el-radio label="省级" border>省级</el-radio>
+            <el-radio label="校级" border>校级</el-radio>
+            <el-radio label="院级" border>院级</el-radio>
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="获奖级别" prop="level">
-          <el-input v-model="editForm.level" autocomplete="off"></el-input>
+          <el-radio-group v-model="editForm.level">
+            <el-radio label="金奖">金奖</el-radio>
+            <el-radio label="银奖">银奖</el-radio>
+            <el-radio label="铜奖">铜奖</el-radio>
+            <el-radio label="特等奖">特等奖</el-radio>
+            <el-radio label="一等奖">一等奖</el-radio>
+            <el-radio label="二等奖">二等奖</el-radio>
+            <el-radio label="三等奖">三等奖</el-radio>
+            <el-radio label="优秀奖">优秀奖</el-radio>
+            <el-radio label="优秀名次">优秀名次</el-radio>
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="比赛时间" prop="game_time">
-          <el-input v-model="editForm.game_time" autocomplete="off"></el-input>
+          <el-input
+            v-model="editForm.game_time"
+            autocomplete="off"
+            type="date"
+          ></el-input>
         </el-form-item>
         <el-form-item label="是否有证明材料" prop="if_proved">
-          <el-input v-model="editForm.if_proved" autocomplete="off"></el-input>
+          <el-radio-group v-model="editForm.if_proved">
+            <el-radio :label=true>是</el-radio>
+            <el-radio :label=false>否</el-radio>
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="证明材料url" prop="proved_img_or_url">
           <el-input
@@ -191,7 +234,7 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="editUser">确 定</el-button>
+        <el-button type="primary" @click="editAward">确 定</el-button>
       </div>
     </el-dialog>
     <el-pagination
@@ -243,17 +286,17 @@ export default {
         if_proved: null,
       },
       addFromRules: {
-        name: [
-          { required: true, message: "请输入获奖人员姓名", trigger: "blur" },
+        player_name: [
+          {required: true, message: "请输入获奖人员姓名", trigger: "blur"},
           {
             min: 2,
-            max: 5,
-            message: "长度在 2 到 5 个字符",
+            max: 10,
+            message: "长度在 2 到 10 个字符",
             trigger: "blur",
           },
         ],
         game_name: [
-          { required: true, message: "请输入比赛全名", trigger: "blur" },
+          {required: true, message: "请输入比赛全名", trigger: "blur"},
           {
             min: 1,
             max: 20,
@@ -262,35 +305,18 @@ export default {
           },
         ],
         type: [
-          { required: true, message: "请输入奖项类型", trigger: "blur" },
-          {
-            min: 2,
-            max: 15,
-            message: "长度在 2 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入奖项类型", trigger: "blur"},
         ],
         level: [
-          { required: true, message: "请输入奖项级别", trigger: "blur" },
-          {
-            min: 2,
-            max: 15,
-            message: "长度在 2 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入奖项级别", trigger: "blur"},
         ],
         game_time: [
-          { required: true, message: "请输入比赛时间", trigger: "blur" },
+          {required: true, message: "请输入比赛时间", trigger: "blur"},
         ],
         if_proved: [
-          { required: true, message: "请输入是否有证明材料", trigger: "blur" },
-          {
-            min: 1,
-            max: 15,
-            message: "长度在 1 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入是否有证明材料", trigger: "blur"},
         ],
+        proved_img_or_url: [{required: false, trigger: "blur"}]
       },
       editForm: {
         game_name: null,
@@ -305,17 +331,17 @@ export default {
         if_proved: null,
       },
       editFromRules: {
-        name: [
-          { required: true, message: "请输入获奖人员姓名", trigger: "blur" },
+        player_name: [
+          {required: true, message: "请输入获奖人员姓名", trigger: "blur"},
           {
             min: 2,
-            max: 5,
-            message: "长度在 2 到 5 个字符",
+            max: 10,
+            message: "长度在 2 到 10 个字符",
             trigger: "blur",
           },
         ],
         game_name: [
-          { required: true, message: "请输入比赛全名", trigger: "blur" },
+          {required: true, message: "请输入比赛全名", trigger: "blur"},
           {
             min: 1,
             max: 20,
@@ -324,43 +350,21 @@ export default {
           },
         ],
         type: [
-          { required: true, message: "请输入奖项类型", trigger: "blur" },
-          {
-            min: 2,
-            max: 15,
-            message: "长度在 2 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入奖项类型", trigger: "blur"},
         ],
         level: [
-          { required: true, message: "请输入奖项级别", trigger: "blur" },
-          {
-            min: 2,
-            max: 15,
-            message: "长度在 2 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入奖项级别", trigger: "blur"},
         ],
         game_time: [
-          { required: true, message: "请输入比赛时间", trigger: "blur" },
-          {
-            min: 2,
-            max: 15,
-            message: "长度在 2 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入比赛时间", trigger: "blur"},
         ],
         if_proved: [
-          { required: true, message: "请输入是否有证明材料", trigger: "blur" },
-          {
-            min: 1,
-            max: 15,
-            message: "长度在 1 到 15 个字符",
-            trigger: "blur",
-          },
+          {required: true, message: "请输入是否有证明材料", trigger: "blur"},
         ],
+        proved_img_or_url: [{required: false, trigger: "blur"}]
       },
       searchWord: "",
+      currentActId: null
     };
   },
   created() {
@@ -393,6 +397,9 @@ export default {
           });
         if (award["code"] != 0) return;
         this.tableData = award["data"];
+        this.tableData.forEach(element => {
+          element.game_time = element.game_time.split('T')[0]
+        })
         this.total_count = award["total_count"];
       } else {
         await this.searchByWord(page);
@@ -413,7 +420,6 @@ export default {
       this.tableData = award["data"];
       this.total_count = award["total_count"];
     },
-
     addDialogClosed() {
       this.$refs.addFormRef.resetFields();
     },
@@ -421,7 +427,7 @@ export default {
       await this.$refs.addFormRef.validate(async (valid) => {
         if (!valid) return;
         const res = await this.$axios
-          .post("/man/insert/award", this.addForm, { withCredentials: true })
+          .post("/man/insert/award", this.addForm, {withCredentials: true})
           .catch((err) => {
             if (err.response.status == 401 || err.response.status == 422) {
               this.$message.error("验证过期，请重新登录");
@@ -435,13 +441,13 @@ export default {
           return this.$message.error("操作失败");
         }
         this.$message.success("操作成功");
-        await this.getActivityList(this.currentPage);
+        await this.getAwardList(this.currentPage);
         this.addDialogVisible = false;
       });
     },
     async deleteAward(id) {
       const confirmResult = await this.$confirm(
-        "此操作将永久删除用户，是否继续？",
+        "此操作将永久删除该奖项，是否继续？",
         "提示",
         {
           confirmButtonText: "确定",
@@ -453,7 +459,7 @@ export default {
         return this.$message.info("已取消删除");
       }
       const res = await this.$axios
-        .delete("/man/delete/award?del_id=" + id, { withCredentials: true })
+        .delete("/man/delete/award?del_id=" + id, {withCredentials: true})
         .catch((err) => {
           this.$message.error("操作失败");
         });
@@ -461,22 +467,32 @@ export default {
       //   return this.$message.error("操作失败");
       // }
       this.$message.success("操作成功");
-      await this.getActivityList(this.currentPage);
+      await this.getAwardList(this.currentPage);
     },
     async showEditDialog(id) {
       this.editDialogVisible = true;
+      this.currentActId = id
+      this.tableData.forEach(element => {
+        if (element.id == this.currentActId) {
+          this.editForm = JSON.parse(JSON.stringify(element))
+          return
+        }
+      })
     },
     editDialogClosed() {
       this.$refs.editFormRef.resetFields();
     },
-    editUser() {
-      this.$refs.editFormRef.validate(async (valid) => {
+    async editAward() {
+      await this.$refs.editFormRef.validate(async (valid) => {
         if (!valid) return;
-        const { data: res } = await this.$http.post("edituser", this.editForm);
-        if (res != "success") {
+        const res = await this.$axios.post("/man/update/award?act_id=" + this.currentActId, this.editForm, {withCredentials: true}).catch((err) => {
+          this.$message.error("操作失败")
+        });
+        if (res.status != 200) {
           return this.$message.error("操作失败");
         }
         this.$message.success("操作成功");
+        await this.getAwardList(this.currentPage);
         this.editDialogVisible = false;
       });
     },
