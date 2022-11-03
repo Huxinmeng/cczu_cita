@@ -112,7 +112,7 @@
         ref="addFormRef"
       >
         <el-form-item label="序列号" prop="first_title">
-          <el-input v-model="addForm.id" autocomplete="off"></el-input>
+          <el-input v-model="addForm.id" autocomplete="off" type="number"></el-input>
         </el-form-item>
         <el-form-item label="第一标题" prop="first_title">
           <el-input v-model="addForm.first_title" autocomplete="off"></el-input>
@@ -158,7 +158,7 @@
 
       >
         <el-form-item label="序列号" prop="first_title">
-          <el-input v-model="editForm.id" autocomplete="off"></el-input>
+          <el-input v-model="editForm.id" autocomplete="off" type="number"></el-input>
         </el-form-item>
         <el-form-item label="第一标题" prop="first_title">
           <el-input v-model="editForm.first_title" autocomplete="off"></el-input>
@@ -369,11 +369,15 @@ export default {
         ).catch((err) => {
           if (err.response.status == 401 || err.response.status == 422) {
             this.$message.error("验证过期，请重新登录");
-            // this.$router.push("/man-login");
+            this.$router.push("/man-login");
           }
         });
         if (activity["code"] != 0) return;
+
         this.tableData = activity["data"];
+        this.tableData.forEach(element => {
+          element.time = element.time.split('T')[0]
+        })
         this.total_count = activity["total_count"];
       } else {
         await this.searchByWord(page)
@@ -441,8 +445,16 @@ export default {
     async showEditDialog(id) {
       this.editDialogVisible = true;
       this.currentActId = id
+      this.tableData.forEach(element => {
+        if (element.id == this.currentActId) {
+          console.log(element)
+          this.editForm = JSON.parse(JSON.stringify(element))
+          console.log(this.editForm)
+        }
+      })
     },
     editDialogClosed() {
+      console.log(this.editForm)
       this.$refs.editFormRef.resetFields();
     },
     async editUser() {
@@ -454,7 +466,6 @@ export default {
         if (res.status != 200) {
           return this.$message.error("操作失败");
         }
-
         this.$message.success("操作成功");
         await this.getActivityList(this.currentPage)
         this.editDialogVisible = false;
