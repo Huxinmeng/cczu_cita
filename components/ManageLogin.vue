@@ -61,7 +61,6 @@
 </template>
 
 <script>
-// import { setCookie, getCookie } from "../static/js/cookie.js";
 export default {
   name: "BlogSingle",
   data() {
@@ -82,13 +81,11 @@ export default {
           let formData = new FormData();
           formData.append("username", this.username);
           formData.append("password", this.password);
-          // console.log(getCookie("token"));
           const response = await this.$axios
             .post("/man/login", formData, { withCredentials: true })
             .then((res) => {
               if ((res.status = 200)) {
                 this.$router.push("/man-index");
-                // console.log(res.headers);
               } else {
                 this.$message.error("账号或者密码有误，请重新登录");
               }
@@ -103,7 +100,6 @@ export default {
           .then((res) => {
             if ((res.status = 200)) {
               this.$router.push("/man-index");
-              // console.log(res.headers);
             }
           });
       }
