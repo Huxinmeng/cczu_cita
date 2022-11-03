@@ -1,3 +1,4 @@
+const env = require('./env')
 export default {
   mode: 'universal',
   /*
@@ -67,17 +68,17 @@ export default {
     '@nuxtjs/axios'
   ],
   axios: {
-    baseURL: "http://124.221.228.222:9801"
+    baseURL: env[process.env.MODE].ENV_API
     // withCredentials: true
   },
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: "http://124.221.228.222:9801"
+      browserBaseURL: env[process.env.MODE].ENV_API
     }
   },
   privateRuntimeConfig: {
     axios: {
-      baseURL: "http://124.221.228.222:9801"
+      baseURL: env[process.env.MODE].ENV_API
     }
   },
   /*
@@ -90,5 +91,6 @@ export default {
     extend(config, ctx) {
     },
     transpile: [/^element-ui/] // 打包时不包含element-ui
-  }
+  },
+
 }
