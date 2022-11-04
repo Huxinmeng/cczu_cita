@@ -16,7 +16,10 @@
           </el-button
           >
         </el-col>
-        <el-col :span="3">
+        <el-col :span="4">
+          <el-button type="warning" @click="uploadDialogVisible = true">上传图片</el-button>
+        </el-col>
+        <el-col :span="5">
           <el-button type="success">从文件导入</el-button>
         </el-col>
       </el-row>
@@ -144,7 +147,50 @@
         <el-button type="primary" @click="addAct">确 定</el-button>
       </div>
     </el-dialog>
-
+    <el-dialog
+      title="上传图片"
+      :visible.sync="uploadDialogVisible"
+      @close="uploadDialogClosed"
+    >
+      <el-form
+        label-width="120px"
+        :model="uploadForm"
+        :rules="uploadFromRules"
+        ref="uploadFormRef"
+      >
+        <el-form-item label="序列号" prop="act_id">
+          <el-input v-model="uploadForm.act_id" autocomplete="off" type="number"></el-input>
+        </el-form-item>
+        <el-form-item label="选择图片" prop="file">
+          <el-upload
+            action=""
+            :show-file-list="true"
+            :auto-upload="true"
+            :multiple="false"
+            :limit="1"
+            :http-request="chooseImgFile"
+            :before-upload="checkFileSize"
+            :file-list="uploadFileList"
+            accept="image/jpeg,image/gif,image/png"
+          >
+            <el-button type="primary">点击上传</el-button>
+          </el-upload>
+        </el-form-item>
+        <el-form-item label="重置大小" prop="resize">
+          <el-input v-model="uploadForm.resize" autocomplete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="图片url" v-if="uploadForm.img_url!=''" prop="img_url">
+          <el-link type="primary" disabled>{{ uploadForm.img_url }}</el-link>
+        </el-form-item>
+        <el-form-item label="重置大小图片url" v-if="uploadForm.img_resize_url!=''" prop="img_resize_url">
+          <el-link type="primary" disabled>{{ uploadForm.img_resize_url }}</el-link>
+        </el-form-item>
+      </el-form>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="uploadDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="uploadAct">确 定</el-button>
+      </div>
+    </el-dialog>
     <el-dialog
       title="修改活动信息"
       :visible.sync="editDialogVisible"
@@ -202,6 +248,8 @@
 </template>
 
 <script>
+import TeacherTable from "@/components/TeacherTable";
+
 export default {
   name: "ActTable",
   data() {
@@ -229,6 +277,7 @@ export default {
       currentActId: null,
       addDialogVisible: false,
       editDialogVisible: false,
+      uploadDialogVisible: false,
       addForm: {
         id: null,
         first_title: null,
@@ -280,6 +329,20 @@ export default {
         type: [
           {required: false, message: "请输入活动类型(默认为0)", trigger: "blur"},
         ],
+      },
+      uploadForm: {
+        act_id: null,
+        file: null,
+        resize: null,
+        img_url: '',
+        img_resize_url: '',
+      },
+      uploadFromRules: {
+        act_id: [{required: true, message: "请输入活动序列号", trigger: "blur"}, {
+          min: 10, max: 10, message: "序列化为10位数字", trigger: "blur"
+        }],
+        file: [{required: true, message: "选择要上传的文件(2M以内)", trigger: "blur"}],
+        resize: [{required: false, message: "要重置的大小，格式为 宽x高"}]
       },
       editForm: {
         id: null,
@@ -333,7 +396,9 @@ export default {
           {required: false, message: "请输入活动类型(默认为0)", trigger: "blur"},
         ],
       },
-      searchWord: ''
+      searchWord: '',
+      uploadFlag: false,
+      uploadFileList: []
     };
   },
   created() {
@@ -419,6 +484,53 @@ export default {
         await this.getActivityList(this.currentPage)
         this.addDialogVisible = false;
       });
+    },
+    uploadDialogClosed() {
+      this.$refs.uploadFormRef.resetFields();
+      this.uploadForm.img_url = ''
+      this.uploadForm.img_resize_url = ''
+      this.uploadFileList = []
+      this.uploadFlag = false
+    },
+    chooseImgFile(params) {
+      this.uploadFlag = false
+      this.uploadForm.file = params.file
+    }, checkFileSize(file) {
+      if (file.size > 2100000) {
+        this.$message.warning('该图片超出大小限制，最大为2M')
+        return false
+      }
+    },
+    async uploadAct() {
+      if (!this.uploadFlag)
+        await this.$refs.uploadFormRef.validate(async (valid) => {
+          if (!valid) return;
+          const formData = new FormData();
+          formData.append("act_id", this.uploadForm.act_id);
+          formData.append("file", this.uploadForm.file);
+          formData.append('resize', this.uploadForm.resize);
+          const res = await this.$axios.post("/man/upload-img/activity", formData, {withCredentials: true}).catch((err) => {
+            if (err.response.status == 401 || err.response.status == 422) {
+              this.$message.error("验证过期，请重新登录")
+              this.$router.push("/man-login");
+            } else {
+              this.$message.error("操作失败");
+            }
+          });
+          // console.log(res)
+          if (res.status != 200) {
+            return this.$message.error("操作失败");
+          }
+          console.log(res)
+          this.$message.success("操作成功");
+          this.uploadForm.img_url = res.data.url
+          if (res.data.resize_url != undefined)
+            this.uploadForm.img_resize_url = res.data.resize_url
+          this.uploadFlag = true
+          // this.uploadDialogVisible = false;
+        });
+      else
+        this.$message.warning('请不要重复上传')
     },
     async deleteAct(id) {
       const confirmResult = await this.$confirm(
