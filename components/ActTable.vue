@@ -176,7 +176,7 @@
             <el-button type="primary">点击上传</el-button>
           </el-upload>
         </el-form-item>
-        <el-form-item label="重置大小" prop="resize">
+        <el-form-item label="重置大小(宽x高)" prop="resize">
           <el-input v-model="uploadForm.resize" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="图片url" v-if="uploadForm.img_url!=''" prop="img_url">
@@ -514,14 +514,13 @@ export default {
               this.$message.error("验证过期，请重新登录")
               this.$router.push("/man-login");
             } else {
-              this.$message.error("操作失败");
+              this.$message.error("格式错误！");
             }
           });
           // console.log(res)
           if (res.status != 200) {
             return this.$message.error("操作失败");
           }
-          console.log(res)
           this.$message.success("操作成功");
           this.uploadForm.img_url = res.data.url
           if (res.data.resize_url != undefined)
