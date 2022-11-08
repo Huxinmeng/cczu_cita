@@ -176,6 +176,9 @@
             <el-button type="primary">点击上传</el-button>
           </el-upload>
         </el-form-item>
+        <el-form-item label="直接替换" prop="replace">
+          <el-switch v-model="uploadForm.replace" autocomplete="off"></el-switch>
+        </el-form-item>
         <el-form-item label="重置大小(宽x高)" prop="resize">
           <el-input v-model="uploadForm.resize" autocomplete="off"></el-input>
         </el-form-item>
@@ -334,6 +337,7 @@ export default {
         act_id: null,
         file: null,
         resize: null,
+        replace: true,
         img_url: '',
         img_resize_url: '',
       },
@@ -342,6 +346,7 @@ export default {
           min: 10, max: 10, message: "序列化为10位数字", trigger: "blur"
         }],
         file: [{required: true, message: "选择要上传的文件(2M以内)", trigger: "blur"}],
+        replace: [{required: true}],
         resize: [{required: false, message: "要重置的大小，格式为 宽x高"}]
       },
       editForm: {
@@ -489,6 +494,7 @@ export default {
       this.$refs.uploadFormRef.resetFields();
       this.uploadForm.img_url = ''
       this.uploadForm.img_resize_url = ''
+      this.uploadForm.replace = true
       this.uploadFileList = []
       this.uploadFlag = false
     },
@@ -508,13 +514,16 @@ export default {
           const formData = new FormData();
           formData.append("act_id", this.uploadForm.act_id);
           formData.append("file", this.uploadForm.file);
+          formData.append('replace', this.uploadForm.replace);
           formData.append('resize', this.uploadForm.resize);
           const res = await this.$axios.post("/man/upload-img/activity", formData, {withCredentials: true}).catch((err) => {
             if (err.response.status == 401 || err.response.status == 422) {
               this.$message.error("验证过期，请重新登录")
               this.$router.push("/man-login");
+            } else if (err.response.status == 404) {
+              this.$message.error("该序列号不存在！请检查序列号或者取消直接替换！");
             } else {
-              this.$message.error("格式错误！");
+              this.$message.error("格式错误！")
             }
           });
           // console.log(res)
@@ -522,11 +531,15 @@ export default {
             return this.$message.error("操作失败");
           }
           this.$message.success("操作成功");
-          this.uploadForm.img_url = res.data.url
-          if (res.data.resize_url != undefined)
-            this.uploadForm.img_resize_url = res.data.resize_url
-          this.uploadFlag = true
-          // this.uploadDialogVisible = false;
+          if (!this.uploadForm.replace) {
+            this.uploadForm.img_url = res.data.url
+            if (res.data.resize_url != undefined)
+              this.uploadForm.img_resize_url = res.data.resize_url
+            this.uploadFlag = true
+          } else {
+            this.uploadDialogVisible = false;
+            await this.getActivityList(this.currentPage)
+          }
         });
       else
         this.$message.warning('请不要重复上传')
